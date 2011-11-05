@@ -1,0 +1,56 @@
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at Sat Nov 05 14:22:54 -0400 2011
+Served asset /rails.png - 200 OK (24ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at Sat Nov 05 14:26:07 -0400 2011
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at Sat Nov 05 14:26:11 -0400 2011
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at Sat Nov 05 14:26:11 -0400 2011
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at Sat Nov 05 14:26:25 -0400 2011
+Served asset /rails.png - 304 Not Modified (16ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Nov 05 14:35:33 -0400 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.6ms)
+Compiled application.css  (7ms)  (pid 22936)
+Compiled home.css  (80ms)  (pid 22936)
+Compiled application.js  (21ms)  (pid 22936)
+Compiled jquery.js  (22ms)  (pid 22936)
+Compiled jquery_ujs.js  (11ms)  (pid 22936)
+Compiled home.js  (357ms)  (pid 22936)
+Completed 200 OK in 822ms (Views: 821.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sat Nov 05 14:35:34 -0400 2011
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Sat Nov 05 14:35:34 -0400 2011
+Served asset /home.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Sat Nov 05 14:35:34 -0400 2011
+Served asset /jquery.js - 200 OK (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Sat Nov 05 14:35:34 -0400 2011
+Served asset /jquery_ujs.js - 200 OK (30ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Sat Nov 05 14:35:34 -0400 2011
+Served asset /home.js - 200 OK (16ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sat Nov 05 14:35:34 -0400 2011
+Served asset /application.js - 200 OK (0ms)
