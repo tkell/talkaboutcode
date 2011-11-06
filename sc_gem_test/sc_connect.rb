@@ -12,6 +12,9 @@ client = Soundcloud.new({
 
 puts client.get('/me').username
 
+# So we could save the javascript recorded file to here, and then push it like this.
+track = client.post('/tracks', :track => {:title => 'a test track', :asset_data => File.new('someaudiofile.wav')})
+
 
 
 
