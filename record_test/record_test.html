@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-  	<title>Thor's test for Recorder and Connect With SoundCloud</title>
+   <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+   <title>Recorder and Connect With SoundCloud</title>
+    <link rel="stylesheet" type="text/css" href="example.css" />
   </head>
   <body>
     <script type="text/javascript" src="http://connect.soundcloud.com/2/latest.min.js"></script>
@@ -21,13 +22,13 @@
           tc.push(hms.h);
         }
         tc.push((hms.m < 10 && hms.h > 0 ? "0" + hms.m : hms.m));
-        tc.push((hms.s < 10  ? "0" + hms.s : hms.s));
+        tc.push((hms.s < 10 ? "0" + hms.s : hms.s));
         return tc.join(':');
       }
     
 
       Recorder.initialize({
-        swfSrc: "../recorder.swf"
+        swfSrc: "recorder.swf"
       });
 
       function record(){
@@ -56,14 +57,14 @@
       
       function upload(){
         SC.connect({
-          client_id: "aHT5HITYm8vlkWNabL0Qg",
-          redirect_uri: "http://recorder.dev/examples/soundcloud-callback.html",
+          client_id: "aa0146325fed3c61bc6e62357f8b3245",
+          redirect_uri: "http://tide-pool.ca/record/soundcloud-callback.html",
           connected: function(){
             Recorder.upload({
-              url:        "https://api.soundcloud.com/tracks.json?oauth_token=" + SC.options.access_token,
+              url: "https://api.soundcloud.com/tracks.json?oauth_token=" + SC.options.access_token,
               audioParam: "track[asset_data]",
               params: {
-                "track[title]":   "recorder.js track test",
+                "track[title]": "talkaboutco.de test track",
                 "track[sharing]": "private"
               },
               success: function(responseText){
@@ -78,17 +79,22 @@
         })
       }
   </script>
-    
-  <div>
-          <a href="javascript:record()"  id="record"                       >Record</a>
-          <a href="javascript:play()"    id="play"   >Play</a> 
-          <a href="javascript:stop()"    id="stop"   >Stop</a>
-          <a href="javascript:upload()"  id="upload" >Upload to SoundCloud</a>
-   </div>
+  
+    <div id="wrapper">
+      <h1>Hopeful example is hopeful.</h1>
+      <p>
+        This is a very basic example for the Recorder.js.
+        Checkout <a href="http://github.com/jwagener/recorder">GitHub</a> for details and have a look at the source for this file.
+        Start by clicking record:
+      </p>
+        <div>
+          <a href="javascript:record()" id="record" >Record</a>
+          <a href="javascript:play()" id="play" >Play</a>
+          <a href="javascript:stop()" id="stop" >Stop</a>
+          <a href="javascript:upload()" id="upload" >Upload to SoundCloud</a>
+        </div>
         
-   <span id="time">0:00</span>
-
-Let's hope this works.  
-
-
+        <span id="time">0:00</span>
+    </div>
+  </body>
 </html>
