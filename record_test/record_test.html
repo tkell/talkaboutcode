@@ -60,10 +60,6 @@
       // The default is non-expiring.  HMM.  
       // I am totally willing to just get a token and hard code it.
       function upload(){
-        SC.connect({
-          client_id: "aa0146325fed3c61bc6e62357f8b3245",
-          redirect_uri: "http://tide-pool.ca/record/soundcloud-callback.html",
-          connected: function(){
             Recorder.upload({
               url: "https://api.soundcloud.com/tracks.json?oauth_token=1-12885-8716802-2cb07260d4801038",
               //url: "https://api.soundcloud.com/tracks.json?oauth_token=" + SC.options.access_token,
@@ -77,11 +73,6 @@
                 window.location = track.permalink_url;
               }
             });
-          },
-          error: function(err){
-            alert(err)
-          }
-        })
       }
   </script>
   
