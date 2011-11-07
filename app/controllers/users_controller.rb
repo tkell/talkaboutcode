@@ -23,8 +23,10 @@ class UsersController < ApplicationController
 
   # GET /users/new
   # GET /users/new.json
+  # This needs to be hacked up to do a proper sign-up
   def new
     @user = User.new
+    @title = "Sign Up for Talkaboutco.de"
 
     respond_to do |format|
       format.html # new.html.erb

@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111105201142) do
+ActiveRecord::Schema.define(:version => 20111107013945) do
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.text     "code_snippet"
+    t.string   "audio_url"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "username"

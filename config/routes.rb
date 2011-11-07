@@ -1,7 +1,13 @@
 Talkaboutcode::Application.routes.draw do
-  resources :users
+  resources :posts
+
+  resources :users do
+    resources :posts
+  end
 
   get "home/index"
+
+  match '/signup',  :to => 'users#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
