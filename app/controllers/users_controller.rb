@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   # GET /users/new.json
-  # This needs to be hacked up to do a proper sign-up
+  # I may want to take a look at the view for this soon.
   def new
     @user = User.new
     @title = "Sign Up for Talkaboutco.de"
@@ -45,7 +45,6 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to Talkaboutco.de"
       redirect_to @user
     else
       @title = "Sign up"
