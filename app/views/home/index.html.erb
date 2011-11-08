@@ -1,5 +1,11 @@
 <h1>Hello, talkaboutco.de</h1>
 
+<% if signed_in? %>
+<%= link_to "Sign out", signout_path %>
+<% else %>
+<%= link_to "Sign in", signin_path %>
 <%= link_to "Sign up for talkaboutco.de", signup_path %>
+<% end %>
 
-<li><%= link_to "Sign in to talkaboutco.de", signin_path %></li>
+
+

@@ -2,7 +2,7 @@
 
 <p>
   <b>Username:</b>
-  <%= @user.username %>
+  <%= @user.username %>`
 </p>
 
 <p>
@@ -14,8 +14,6 @@
   <b>Password:</b>
   <%= @user.password %>
 </p>
-
-<li><%= link_to "Sign out:", signout_path %></li>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
