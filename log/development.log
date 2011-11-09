@@ -20538,3 +20538,58 @@ Served asset /sessions.js - 304 Not Modified (0ms)
 
 Started GET "/assets/users.js?body=1" for 127.0.0.1 at Tue Nov 08 23:04:01 -0800 2011
 Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 23:09:49 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC[0m
+Rendered posts/_post.html.erb (412.1ms)
+Rendered users/show.html.erb within layouts/application (451.0ms)
+Completed 200 OK in 499ms (Views: 487.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Tue Nov 08 23:09:50 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Tue Nov 08 23:09:50 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Tue Nov 08 23:09:50 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Tue Nov 08 23:09:50 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Tue Nov 08 23:09:50 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Tue Nov 08 23:09:50 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Tue Nov 08 23:09:50 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Tue Nov 08 23:09:50 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Tue Nov 08 23:09:50 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Tue Nov 08 23:09:50 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Tue Nov 08 23:09:50 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)

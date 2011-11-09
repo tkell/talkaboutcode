@@ -5,7 +5,7 @@ module PostsHelper
 
     def embed(url)
         url = "/oembed?url=" + url + "&format=json"
-        http = Net::HTTP.new("soundcloud.com")
+        http = Net::HTTP.new("soundcloud.com", "80")
         req = Net::HTTP::Get.new(url, {'User-Agent' => 'thoragent'})
         response = http.request(req)
 
