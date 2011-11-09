@@ -2,7 +2,7 @@ require 'digest'
 
 class User < ActiveRecord::Base
     attr_accessible :username, :email, :password
-    has_many :posts
+    has_many :posts, :dependent => :destroy
 
     # Uniqueness will start to fail if traffic increases.  Not worried about that at all for now.
     # ^^ This is in 6.22 of the Rails tutorial, if I decide that I need it.

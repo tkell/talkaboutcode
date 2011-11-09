@@ -1,15 +1,12 @@
 Talkaboutcode::Application.routes.draw do
-  get "sessions/new"
-
   resources :posts
-
   resources :users do
     resources :posts
   end
-
   resources :sessions, :only => [:new, :create, :destroy]
 
   get "home/index"
+  get "sessions/new"
 
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'

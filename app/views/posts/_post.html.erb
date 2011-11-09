@@ -1,0 +1,8 @@
+<tr>
+<td class="post">
+    <span class="title"><%= post.title %> </span>
+    <span class="code"><%= post.code_snippet %> </span>
+    <span class="audio"><%= embed(post.audio_url).html_safe %> </span>
+    <span class="timestamp"><%= post.created_at %> </span>
+</td>
+</tr>

@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_filter :authenticate, :only => [:new, :edit, :update, :destroy]
+
   # GET /posts
   # GET /posts.json
   def index
@@ -24,8 +26,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.json
   def new
-    @post = Post.new
-
+    @post = current_user.posts.build(params[:post]) # This is garbage, but it works for now. 
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @post }
@@ -40,7 +41,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(params[:post])
+    @post = current_user.posts.build(params[:post])
 
     respond_to do |format|
       if @post.save
@@ -80,4 +81,10 @@ class PostsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  private
+    def authenticate
+      deny_access unless signed_in?
+    end
+
 end

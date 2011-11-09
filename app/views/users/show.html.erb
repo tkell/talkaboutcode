@@ -2,12 +2,20 @@
 
 <p>
   <b>Username:</b>
-  <%= @user.username %>`
+  <%= @user.username %>
 </p>
 
 <p>
   <b>Email:</b>
   <%= @user.email %>
+</p>
+
+<p>
+<% unless @user.posts.empty? %>
+    <table class="posts" summary="User posts">
+         <%= render @posts %>
+    </table>
+<% end %>
 </p>
 
 
