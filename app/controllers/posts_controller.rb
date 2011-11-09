@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_filter :authenticate, :only => [:new, :edit, :update, :destroy]
+  include PostsHelper
 
   # GET /posts
   # GET /posts.json
@@ -43,8 +44,14 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(params[:post])
 
+    #sc_path = "http://soundcloud.com/talkaboutcode/"
+    #@sc_url = sc_path + current_user.username + "--" + current_user.post_count.to_s
+    @post.audio_url = generate_sc_url
+
     respond_to do |format|
       if @post.save
+        current_user.post_count = current_user.post_count + 1
+        current_user.save
         format.html { redirect_to @post, :notice => 'Post was successfully created.' }
         format.json { render :json => @post, :status => :created, :location => @post }
       else

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111108054639) do
+ActiveRecord::Schema.define(:version => 20111109193707) do
 
   create_table "posts", :force => true do |t|
     t.string   "title"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20111108054639) do
     t.datetime "updated_at"
     t.string   "encrypted_password"
     t.string   "salt"
+    t.integer  "post_count"
   end
 
 end

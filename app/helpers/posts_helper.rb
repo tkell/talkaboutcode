@@ -3,6 +3,11 @@ require 'net/http'
 
 module PostsHelper
 
+    def generate_sc_url
+        sc_path = "http://soundcloud.com/talkaboutcode/"
+        sc_path + current_user.username + "--" + current_user.post_count.to_s
+    end
+
     def embed(url)
         url = "/oembed?url=" + url + "&format=json"
         http = Net::HTTP.new("soundcloud.com", "80")
@@ -20,7 +25,7 @@ module PostsHelper
     end
 
     def resolve(url)
-        # http://api.soundcloud.com/resolve.json?url=http://soundcloud.com/matas/hobnotropic&client_id=YOUR_CLIENT_ID'
+      #http://api.soundcloud.com/resolve.json?url=http://soundcloud.com/matas/hobnotropic&client_id=YOUR_CLIENT_ID'
       sc_url = "http://api.soundcloud.com/resolve.json?"
       client_id = "&client_id=aa0146325fed3c61bc6e62357f8b3245"
       url = sc_url + url + client_id

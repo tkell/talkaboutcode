@@ -8,9 +8,8 @@
     Code:  <%= f.text_area :code_snippet %>
   </div>
 
-  <div class="field">
-    SoundCloud URL: <%= f.text_field :audio_url %>
-  </div>
+  <%= generate_sc_url %>
+
   <div class="actions">
     <%= f.submit "Submit" %>
   </div>
