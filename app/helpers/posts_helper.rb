@@ -19,4 +19,14 @@ module PostsHelper
         end
     end
 
+    def resolve(url)
+        # http://api.soundcloud.com/resolve.json?url=http://soundcloud.com/matas/hobnotropic&client_id=YOUR_CLIENT_ID'
+      sc_url = "http://api.soundcloud.com/resolve.json?url="
+      client_id = "&client_id=aa0146325fed3c61bc6e62357f8b3245"
+      url = sc_url + url + client_id
+    
+      r = Net::HTTP.get_response(URI.parse(url))
+      r.body
+    end
+
 end
