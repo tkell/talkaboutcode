@@ -43,9 +43,6 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = current_user.posts.build(params[:post])
-
-    #sc_path = "http://soundcloud.com/talkaboutcode/"
-    #@sc_url = sc_path + current_user.username + "--" + current_user.post_count.to_s
     @post.audio_url = generate_sc_url
 
     respond_to do |format|

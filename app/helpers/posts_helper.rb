@@ -5,11 +5,11 @@ module PostsHelper
 
     def generate_sc_url
         sc_path = "http://soundcloud.com/talkaboutcode/"
-        sc_path + current_user.username + "--" + current_user.post_count.to_s
+        sc_path + generate_sc_track_name
     end
 
     def generate_sc_track_name
-        current_user.username + "--" + current_user.post_count.to_s
+        current_user.username.downcase + "-" + current_user.post_count.to_s
     end
 
     def embed(url)
