@@ -8,6 +8,10 @@ module PostsHelper
         sc_path + current_user.username + "--" + current_user.post_count.to_s
     end
 
+    def generate_sc_track_name
+        current_user.username + "--" + current_user.post_count.to_s
+    end
+
     def embed(url)
         url = "/oembed?url=" + url + "&format=json"
         http = Net::HTTP.new("soundcloud.com", "80")
