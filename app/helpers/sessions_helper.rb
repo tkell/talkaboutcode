@@ -5,12 +5,20 @@ module SessionsHelper
     self.current_user = user
   end
 
+  def current_user?(user)
+    user == current_user
+  end
+
   def current_user=(user)
     @current_user = user
   end
 
   def current_user
     @current_user ||=user_from_remember_token
+  end
+
+  def deny_access
+    redirect_to signin_path
   end
 
   def signed_in?
