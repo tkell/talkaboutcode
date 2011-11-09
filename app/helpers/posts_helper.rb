@@ -4,12 +4,19 @@ require 'net/http'
 module PostsHelper
 
     def embed(url)
-        url = "http://soundcloud.com/oembed?url=" +url + "&format=json"
-        r = Net::HTTP.get(URI(url))
-        puts "debugz"
-        puts r
-        oembed_results = JSON.parse(r)
-        oembed_results["html"].html_safe
+        url = "/oembed?url=" + url + "&format=json"
+        http = Net::HTTP.new("soundcloud.com")
+        req = Net::HTTP::Get.new(url, {'User-Agent' => 'thoragent'})
+        response = http.request(req)
+
+        #r = Net::HTTP.get_response(URI.parse(url))
+        r = response.body
+        if r.bytesize > 2
+            oembed_results = JSON.parse(r)
+            oembed_results["html"].html_safe
+        else
+            'oh no!'
+        end
     end
 
 end

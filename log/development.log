@@ -19516,3 +19516,1025 @@ Served asset /sessions.js - 304 Not Modified (0ms)
 
 Started GET "/assets/users.js?body=1" for 127.0.0.1 at Tue Nov 08 22:37:55 -0800 2011
 Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:42:52 -0800 2011
+
+SyntaxError (/home/thor/Dropbox/SENG 435/FinalProject/Code/app/helpers/posts_helper.rb:13: void value expression):
+  app/controllers/application_controller.rb:1
+  app/controllers/users_controller.rb:1
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:43:07 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC[0m
+Rendered posts/_post.html.erb (392.3ms)
+Rendered users/show.html.erb within layouts/application (423.9ms)
+Completed 200 OK in 459ms (Views: 453.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Tue Nov 08 22:43:08 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Tue Nov 08 22:43:08 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Tue Nov 08 22:43:08 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Tue Nov 08 22:43:08 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Tue Nov 08 22:43:08 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Tue Nov 08 22:43:08 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Tue Nov 08 22:43:08 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Tue Nov 08 22:43:08 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Tue Nov 08 22:43:08 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Tue Nov 08 22:43:08 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Tue Nov 08 22:43:08 -0800 2011
+Served asset /users.js - 304 Not Modified (2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:43:26 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC
+Rendered posts/_post.html.erb (384.2ms)
+Rendered users/show.html.erb within layouts/application (412.9ms)
+Completed 200 OK in 462ms (Views: 455.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Tue Nov 08 22:43:27 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Tue Nov 08 22:43:27 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Tue Nov 08 22:43:27 -0800 2011
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Tue Nov 08 22:43:27 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Tue Nov 08 22:43:27 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Tue Nov 08 22:43:27 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Tue Nov 08 22:43:27 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Tue Nov 08 22:43:27 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Tue Nov 08 22:43:27 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Tue Nov 08 22:43:27 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Tue Nov 08 22:43:27 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:44:02 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC[0m
+Rendered posts/_post.html.erb (405.0ms)
+Rendered users/show.html.erb within layouts/application (440.4ms)
+Completed 200 OK in 499ms (Views: 492.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Tue Nov 08 22:44:03 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Tue Nov 08 22:44:03 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Tue Nov 08 22:44:03 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Tue Nov 08 22:44:03 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Tue Nov 08 22:44:03 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Tue Nov 08 22:44:03 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Tue Nov 08 22:44:03 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Tue Nov 08 22:44:03 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Tue Nov 08 22:44:03 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Tue Nov 08 22:44:03 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Tue Nov 08 22:44:03 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:44:16 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC
+Rendered posts/_post.html.erb (167.6ms)
+Rendered users/show.html.erb within layouts/application (194.5ms)
+Completed 500 Internal Server Error in 213ms
+
+ActionView::Template::Error (getaddrinfo: Name or service not known):
+    2: <td class="post">
+    3:     <span class="title"><%= post.title %> </span>
+    4:     <span class="code"><%= post.code_snippet %> </span>
+    5:     <span class="audio"><%= embed(post.audio_url) %> </span>
+    6:     <span class="timestamp"><%= post.created_at %> </span>
+    7: </td>
+    8: </tr>
+  app/helpers/posts_helper.rb:8:in `embed'
+  app/views/posts/_post.html.erb:5:in `_app_views_posts__post_html_erb___846153357_69930345861560'
+  app/views/users/show.html.erb:16:in `_app_views_users_show_html_erb__2030529784_69930344244420'
+  app/controllers/users_controller.rb:23:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:44:30 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC[0m
+Rendered posts/_post.html.erb (377.6ms)
+Rendered users/show.html.erb within layouts/application (514.9ms)
+Completed 500 Internal Server Error in 541ms
+
+ActionView::Template::Error (A JSON text must at least contain two octets!):
+    2: <td class="post">
+    3:     <span class="title"><%= post.title %> </span>
+    4:     <span class="code"><%= post.code_snippet %> </span>
+    5:     <span class="audio"><%= embed(post.audio_url) %> </span>
+    6:     <span class="timestamp"><%= post.created_at %> </span>
+    7: </td>
+    8: </tr>
+  app/helpers/posts_helper.rb:10:in `embed'
+  app/views/posts/_post.html.erb:5:in `_app_views_posts__post_html_erb___846153357_69930345861560'
+  app/views/users/show.html.erb:16:in `_app_views_users_show_html_erb__2030529784_69930344244420'
+  app/controllers/users_controller.rb:23:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:44:51 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1[0m
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC
+Rendered posts/_post.html.erb (391.0ms)
+Rendered users/show.html.erb within layouts/application (418.9ms)
+Completed 500 Internal Server Error in 435ms
+
+ActionView::Template::Error (A JSON text must at least contain two octets!):
+    2: <td class="post">
+    3:     <span class="title"><%= post.title %> </span>
+    4:     <span class="code"><%= post.code_snippet %> </span>
+    5:     <span class="audio"><%= embed(post.audio_url) %> </span>
+    6:     <span class="timestamp"><%= post.created_at %> </span>
+    7: </td>
+    8: </tr>
+  app/helpers/posts_helper.rb:11:in `embed'
+  app/views/posts/_post.html.erb:5:in `_app_views_posts__post_html_erb___846153357_69930345861560'
+  app/views/users/show.html.erb:16:in `_app_views_users_show_html_erb__2030529784_69930344244420'
+  app/controllers/users_controller.rb:23:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:48:50 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC[0m
+ 
+Rendered posts/_post.html.erb (394.2ms)
+Rendered users/show.html.erb within layouts/application (434.2ms)
+Completed 500 Internal Server Error in 462ms
+
+ActionView::Template::Error (A JSON text must at least contain two octets!):
+    2: <td class="post">
+    3:     <span class="title"><%= post.title %> </span>
+    4:     <span class="code"><%= post.code_snippet %> </span>
+    5:     <span class="audio"><%= embed(post.audio_url) %> </span>
+    6:     <span class="timestamp"><%= post.created_at %> </span>
+    7: </td>
+    8: </tr>
+  app/helpers/posts_helper.rb:11:in `embed'
+  app/views/posts/_post.html.erb:5:in `_app_views_posts__post_html_erb___846153357_69930345861560'
+  app/views/users/show.html.erb:16:in `_app_views_users_show_html_erb__2030529784_69930344244420'
+  app/controllers/users_controller.rb:23:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:49:06 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC
+DEBUG
+Rendered posts/_post.html.erb (381.7ms)
+Rendered users/show.html.erb within layouts/application (408.3ms)
+Completed 500 Internal Server Error in 440ms
+
+ActionView::Template::Error (A JSON text must at least contain two octets!):
+    2: <td class="post">
+    3:     <span class="title"><%= post.title %> </span>
+    4:     <span class="code"><%= post.code_snippet %> </span>
+    5:     <span class="audio"><%= embed(post.audio_url) %> </span>
+    6:     <span class="timestamp"><%= post.created_at %> </span>
+    7: </td>
+    8: </tr>
+  app/helpers/posts_helper.rb:11:in `embed'
+  app/views/posts/_post.html.erb:5:in `_app_views_posts__post_html_erb___846153357_69930345861560'
+  app/views/users/show.html.erb:16:in `_app_views_users_show_html_erb__2030529784_69930344244420'
+  app/controllers/users_controller.rb:23:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:49:31 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC[0m
+DEBUG
+String
+Rendered posts/_post.html.erb (409.5ms)
+Rendered users/show.html.erb within layouts/application (445.9ms)
+Completed 500 Internal Server Error in 466ms
+
+ActionView::Template::Error (A JSON text must at least contain two octets!):
+    2: <td class="post">
+    3:     <span class="title"><%= post.title %> </span>
+    4:     <span class="code"><%= post.code_snippet %> </span>
+    5:     <span class="audio"><%= embed(post.audio_url) %> </span>
+    6:     <span class="timestamp"><%= post.created_at %> </span>
+    7: </td>
+    8: </tr>
+  app/helpers/posts_helper.rb:12:in `embed'
+  app/views/posts/_post.html.erb:5:in `_app_views_posts__post_html_erb___846153357_69930345861560'
+  app/views/users/show.html.erb:16:in `_app_views_users_show_html_erb__2030529784_69930344244420'
+  app/controllers/users_controller.rb:23:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:49:50 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC
+DEBUG
+String
+ 
+Rendered posts/_post.html.erb (391.3ms)
+Rendered users/show.html.erb within layouts/application (512.6ms)
+Completed 500 Internal Server Error in 529ms
+
+ActionView::Template::Error (A JSON text must at least contain two octets!):
+    2: <td class="post">
+    3:     <span class="title"><%= post.title %> </span>
+    4:     <span class="code"><%= post.code_snippet %> </span>
+    5:     <span class="audio"><%= embed(post.audio_url) %> </span>
+    6:     <span class="timestamp"><%= post.created_at %> </span>
+    7: </td>
+    8: </tr>
+  app/helpers/posts_helper.rb:13:in `embed'
+  app/views/posts/_post.html.erb:5:in `_app_views_posts__post_html_erb___846153357_69930345861560'
+  app/views/users/show.html.erb:16:in `_app_views_users_show_html_erb__2030529784_69930344244420'
+  app/controllers/users_controller.rb:23:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:50:00 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC[0m
+DEBUG
+String
+ 
+Rendered posts/_post.html.erb (383.6ms)
+Rendered users/show.html.erb within layouts/application (418.7ms)
+Completed 500 Internal Server Error in 443ms
+
+ActionView::Template::Error (A JSON text must at least contain two octets!):
+    2: <td class="post">
+    3:     <span class="title"><%= post.title %> </span>
+    4:     <span class="code"><%= post.code_snippet %> </span>
+    5:     <span class="audio"><%= embed(post.audio_url) %> </span>
+    6:     <span class="timestamp"><%= post.created_at %> </span>
+    7: </td>
+    8: </tr>
+  app/helpers/posts_helper.rb:13:in `embed'
+  app/views/posts/_post.html.erb:5:in `_app_views_posts__post_html_erb___846153357_69930345861560'
+  app/views/users/show.html.erb:16:in `_app_views_users_show_html_erb__2030529784_69930344244420'
+  app/controllers/users_controller.rb:23:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (20.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (122.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:50:21 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC
+DEBUG
+String
+
+Rendered posts/_post.html.erb (393.7ms)
+Rendered users/show.html.erb within layouts/application (427.1ms)
+Completed 500 Internal Server Error in 456ms
+
+ActionView::Template::Error (A JSON text must at least contain two octets!):
+    2: <td class="post">
+    3:     <span class="title"><%= post.title %> </span>
+    4:     <span class="code"><%= post.code_snippet %> </span>
+    5:     <span class="audio"><%= embed(post.audio_url) %> </span>
+    6:     <span class="timestamp"><%= post.created_at %> </span>
+    7: </td>
+    8: </tr>
+  app/helpers/posts_helper.rb:13:in `embed'
+  app/views/posts/_post.html.erb:5:in `_app_views_posts__post_html_erb___846153357_69930345861560'
+  app/views/users/show.html.erb:16:in `_app_views_users_show_html_erb__2030529784_69930344244420'
+  app/controllers/users_controller.rb:23:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:50:40 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC[0m
+DEBUG
+String
+
+Rendered posts/_post.html.erb (397.1ms)
+Rendered users/show.html.erb within layouts/application (439.8ms)
+Completed 500 Internal Server Error in 460ms
+
+ActionView::Template::Error (A JSON text must at least contain two octets!):
+    2: <td class="post">
+    3:     <span class="title"><%= post.title %> </span>
+    4:     <span class="code"><%= post.code_snippet %> </span>
+    5:     <span class="audio"><%= embed(post.audio_url) %> </span>
+    6:     <span class="timestamp"><%= post.created_at %> </span>
+    7: </td>
+    8: </tr>
+  app/helpers/posts_helper.rb:13:in `embed'
+  app/views/posts/_post.html.erb:5:in `_app_views_posts__post_html_erb___846153357_69930345861560'
+  app/views/users/show.html.erb:16:in `_app_views_users_show_html_erb__2030529784_69930344244420'
+  app/controllers/users_controller.rb:23:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:51:08 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC
+DEBUG
+String
+ 
+Rendered posts/_post.html.erb (403.1ms)
+Rendered users/show.html.erb within layouts/application (442.8ms)
+Completed 500 Internal Server Error in 557ms
+
+ActionView::Template::Error (A JSON text must at least contain two octets!):
+    2: <td class="post">
+    3:     <span class="title"><%= post.title %> </span>
+    4:     <span class="code"><%= post.code_snippet %> </span>
+    5:     <span class="audio"><%= embed(post.audio_url) %> </span>
+    6:     <span class="timestamp"><%= post.created_at %> </span>
+    7: </td>
+    8: </tr>
+  app/helpers/posts_helper.rb:13:in `embed'
+  app/views/posts/_post.html.erb:5:in `_app_views_posts__post_html_erb___846153357_69930345861560'
+  app/views/users/show.html.erb:16:in `_app_views_users_show_html_erb__2030529784_69930344244420'
+  app/controllers/users_controller.rb:23:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:51:27 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC[0m
+DEBUG
+String
+{"version":1.0,"type":"rich","provider_name":"Soundcloud","provider_url":"http://soundcloud.com","height":81,"width":"100%","title":"Call Your Girlfriend by robyn","description":"Taken from the album 'Body Talk' out now in the USA and Sweden, 29 Nov in the UK and 3 Dec in Germany","html":"\u003Cobject height=\"81\" width=\"100%\"\u003E\n\u003Cparam name=\"movie\" value=\"http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F7327333\"\u003E\u003C/param\u003E\n\u003Cparam name=\"allowscriptaccess\" value=\"always\"\u003E\u003C/param\u003E\n\u003Cembed allowscriptaccess=\"always\" height=\"81\" src=\"http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F7327333\" type=\"application/x-shockwave-flash\" width=\"100%\"\u003E\u003C/embed\u003E\n\u003C/object\u003E\n\n\u003Cspan\u003E\u003Ca href=\"http://soundcloud.com/robyn/call-your-girlfriend\"\u003ECall Your Girlfriend\u003C/a\u003E by \u003Ca href=\"http://soundcloud.com/robyn\"\u003Erobyn\u003C/a\u003E\u003C/span\u003E\n"}
+Rendered posts/_post.html.erb (521.5ms)
+Rendered users/show.html.erb within layouts/application (551.7ms)
+Completed 200 OK in 605ms (Views: 596.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Tue Nov 08 22:51:28 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Tue Nov 08 22:51:28 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Tue Nov 08 22:51:28 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Tue Nov 08 22:51:28 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Tue Nov 08 22:51:28 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Tue Nov 08 22:51:28 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Tue Nov 08 22:51:28 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Tue Nov 08 22:51:28 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Tue Nov 08 22:51:28 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Tue Nov 08 22:51:28 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Tue Nov 08 22:51:28 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:52:15 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1[0m
+  [1m[35mPost Load (1.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC
+DEBUG
+String
+ 
+Rendered posts/_post.html.erb (865.9ms)
+Rendered users/show.html.erb within layouts/application (1018.3ms)
+Completed 500 Internal Server Error in 1040ms
+
+ActionView::Template::Error (A JSON text must at least contain two octets!):
+    2: <td class="post">
+    3:     <span class="title"><%= post.title %> </span>
+    4:     <span class="code"><%= post.code_snippet %> </span>
+    5:     <span class="audio"><%= embed(post.audio_url) %> </span>
+    6:     <span class="timestamp"><%= post.created_at %> </span>
+    7: </td>
+    8: </tr>
+  app/helpers/posts_helper.rb:13:in `embed'
+  app/views/posts/_post.html.erb:5:in `_app_views_posts__post_html_erb___846153357_69930345861560'
+  app/views/users/show.html.erb:16:in `_app_views_users_show_html_erb__2030529784_69930344244420'
+  app/controllers/users_controller.rb:23:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (26.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:53:18 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (2.2ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC[0m
+DEBUG
+String
+ 
+Rendered posts/_post.html.erb (390.1ms)
+Rendered users/show.html.erb within layouts/application (432.9ms)
+Completed 500 Internal Server Error in 455ms
+
+ActionView::Template::Error (A JSON text must at least contain two octets!):
+    2: <td class="post">
+    3:     <span class="title"><%= post.title %> </span>
+    4:     <span class="code"><%= post.code_snippet %> </span>
+    5:     <span class="audio"><%= embed(post.audio_url) %> </span>
+    6:     <span class="timestamp"><%= post.created_at %> </span>
+    7: </td>
+    8: </tr>
+  app/helpers/posts_helper.rb:13:in `embed'
+  app/views/posts/_post.html.erb:5:in `_app_views_posts__post_html_erb___846153357_69930345861560'
+  app/views/users/show.html.erb:16:in `_app_views_users_show_html_erb__2030529784_69930344244420'
+  app/controllers/users_controller.rb:23:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:56:58 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1[0m
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC
+DEBUG
+String
+
+Rendered posts/_post.html.erb (851.5ms)
+Rendered users/show.html.erb within layouts/application (895.0ms)
+Completed 500 Internal Server Error in 915ms
+
+ActionView::Template::Error (A JSON text must at least contain two octets!):
+    2: <td class="post">
+    3:     <span class="title"><%= post.title %> </span>
+    4:     <span class="code"><%= post.code_snippet %> </span>
+    5:     <span class="audio"><%= embed(post.audio_url) %> </span>
+    6:     <span class="timestamp"><%= post.created_at %> </span>
+    7: </td>
+    8: </tr>
+  app/helpers/posts_helper.rb:13:in `embed'
+  app/views/posts/_post.html.erb:5:in `_app_views_posts__post_html_erb___846153357_69930345861560'
+  app/views/users/show.html.erb:16:in `_app_views_users_show_html_erb__2030529784_69930344244420'
+  app/controllers/users_controller.rb:23:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:57:21 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC[0m
+DEBUG
+String
+
+Rendered posts/_post.html.erb (376.4ms)
+Rendered users/show.html.erb within layouts/application (410.7ms)
+Completed 500 Internal Server Error in 431ms
+
+ActionView::Template::Error (A JSON text must at least contain two octets!):
+    2: <td class="post">
+    3:     <span class="title"><%= post.title %> </span>
+    4:     <span class="code"><%= post.code_snippet %> </span>
+    5:     <span class="audio"><%= embed(post.audio_url) %> </span>
+    6:     <span class="timestamp"><%= post.created_at %> </span>
+    7: </td>
+    8: </tr>
+  app/helpers/posts_helper.rb:13:in `embed'
+  app/views/posts/_post.html.erb:5:in `_app_views_posts__post_html_erb___846153357_69930345861560'
+  app/views/users/show.html.erb:16:in `_app_views_users_show_html_erb__2030529784_69930344244420'
+  app/controllers/users_controller.rb:23:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:58:09 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC
+DEBUG
+String
+1
+Rendered posts/_post.html.erb (375.2ms)
+Rendered users/show.html.erb within layouts/application (530.5ms)
+Completed 500 Internal Server Error in 555ms
+
+ActionView::Template::Error (A JSON text must at least contain two octets!):
+    2: <td class="post">
+    3:     <span class="title"><%= post.title %> </span>
+    4:     <span class="code"><%= post.code_snippet %> </span>
+    5:     <span class="audio"><%= embed(post.audio_url) %> </span>
+    6:     <span class="timestamp"><%= post.created_at %> </span>
+    7: </td>
+    8: </tr>
+  app/helpers/posts_helper.rb:13:in `embed'
+  app/views/posts/_post.html.erb:5:in `_app_views_posts__post_html_erb___846153357_69930345861560'
+  app/views/users/show.html.erb:16:in `_app_views_users_show_html_erb__2030529784_69930344244420'
+  app/controllers/users_controller.rb:23:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:58:29 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC[0m
+Rendered posts/_post.html.erb (377.0ms)
+Rendered users/show.html.erb within layouts/application (409.2ms)
+Completed 200 OK in 447ms (Views: 439.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Tue Nov 08 22:58:30 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Tue Nov 08 22:58:30 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Tue Nov 08 22:58:30 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Tue Nov 08 22:58:30 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Tue Nov 08 22:58:30 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Tue Nov 08 22:58:30 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Tue Nov 08 22:58:30 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Tue Nov 08 22:58:30 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Tue Nov 08 22:58:30 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Tue Nov 08 22:58:30 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Tue Nov 08 22:58:30 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 22:58:46 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1[0m
+  [1m[35mPost Load (2.0ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC
+DEBUG
+String
+1052
+Rendered posts/_post.html.erb (395.7ms)
+Rendered users/show.html.erb within layouts/application (435.5ms)
+Completed 200 OK in 613ms (Views: 604.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Tue Nov 08 22:58:46 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Tue Nov 08 22:58:46 -0800 2011
+Served asset /posts.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Tue Nov 08 22:58:46 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Tue Nov 08 22:58:46 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Tue Nov 08 22:58:46 -0800 2011
+Served asset /users.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Tue Nov 08 22:58:46 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Tue Nov 08 22:58:46 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Tue Nov 08 22:58:46 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Tue Nov 08 22:58:46 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Tue Nov 08 22:58:46 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Tue Nov 08 22:58:46 -0800 2011
+Served asset /users.js - 304 Not Modified (3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 23:00:35 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC[0m
+Rendered posts/_post.html.erb (405.3ms)
+Rendered users/show.html.erb within layouts/application (435.1ms)
+Completed 500 Internal Server Error in 460ms
+
+ActionView::Template::Error (undefined method `bytesize' for #<Net::HTTPOK 200 OK readbody=true>):
+    2: <td class="post">
+    3:     <span class="title"><%= post.title %> </span>
+    4:     <span class="code"><%= post.code_snippet %> </span>
+    5:     <span class="audio"><%= embed(post.audio_url) %> </span>
+    6:     <span class="timestamp"><%= post.created_at %> </span>
+    7: </td>
+    8: </tr>
+  app/helpers/posts_helper.rb:9:in `embed'
+  app/views/posts/_post.html.erb:5:in `_app_views_posts__post_html_erb___846153357_69930345861560'
+  app/views/users/show.html.erb:16:in `_app_views_users_show_html_erb__2030529784_69930344244420'
+  app/controllers/users_controller.rb:23:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 23:00:55 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC
+Rendered posts/_post.html.erb (379.9ms)
+Rendered users/show.html.erb within layouts/application (407.5ms)
+Completed 200 OK in 453ms (Views: 446.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Tue Nov 08 23:00:56 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Tue Nov 08 23:00:56 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Tue Nov 08 23:00:56 -0800 2011
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Tue Nov 08 23:00:56 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Tue Nov 08 23:00:56 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Tue Nov 08 23:00:56 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Tue Nov 08 23:00:56 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Tue Nov 08 23:00:56 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Tue Nov 08 23:00:56 -0800 2011
+Served asset /posts.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Tue Nov 08 23:00:56 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Tue Nov 08 23:00:56 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 23:03:52 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC[0m
+Rendered posts/_post.html.erb (420.1ms)
+Rendered users/show.html.erb within layouts/application (450.7ms)
+Completed 200 OK in 480ms (Views: 473.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Tue Nov 08 23:03:52 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Tue Nov 08 23:03:52 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Tue Nov 08 23:03:52 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Tue Nov 08 23:03:52 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Tue Nov 08 23:03:53 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Tue Nov 08 23:03:53 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Tue Nov 08 23:03:53 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Tue Nov 08 23:03:53 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Tue Nov 08 23:03:53 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Tue Nov 08 23:03:53 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Tue Nov 08 23:03:53 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Tue Nov 08 23:04:00 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 1 ORDER BY posts.created_at DESC
+Rendered posts/_post.html.erb (389.5ms)
+Rendered users/show.html.erb within layouts/application (448.1ms)
+Completed 200 OK in 495ms (Views: 488.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Tue Nov 08 23:04:01 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Tue Nov 08 23:04:01 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Tue Nov 08 23:04:01 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Tue Nov 08 23:04:01 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Tue Nov 08 23:04:01 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Tue Nov 08 23:04:01 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Tue Nov 08 23:04:01 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Tue Nov 08 23:04:01 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Tue Nov 08 23:04:01 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Tue Nov 08 23:04:01 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Tue Nov 08 23:04:01 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
