@@ -1,4 +1,4 @@
-o: ActiveSupport::Cache::Entry	:@value{	"_version"%a647bab01c39f424ca0a2419677fb04c"digest"%72d4064eb1615ed0f857ee3d637066d0"lengthi;"source";/**
+o: ActiveSupport::Cache::Entry	:@value{	"_version"%437a145fcd9a3728de6e2e844075a63b"digest"%72d4064eb1615ed0f857ee3d637066d0"lengthi;"source";/**
  * Unobtrusive scripting adapter for jQuery
  *
  * Requires jQuery 1.6.0 or later.
@@ -366,4 +366,4 @@
   });
 
 })( jQuery );
-:@expires_in0:@compressedF:@created_atf1320810338.397665 sX
+:@expires_in0:@compressedF:@created_atf1320819644.3298271 ã
