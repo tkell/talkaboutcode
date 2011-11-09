@@ -1,15 +1,16 @@
 <h1>New post</h1>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-<script src="http://connect.soundcloud.com/sdk.js"></script>  
+<script src="/assets/sdk.js"></script>  
 	<script>
-    // ALL THIS WILL BE MOVED I PROMISE
+    // ALL THIS WILL BE MOVED I PROMISE.  And that redirect URI might break in production, but I don't think I need it, so
 	  SC.initialize({
 	    client_id:    "aa0146325fed3c61bc6e62357f8b3245",
-	    redirect_uri: "http://tide-pool.ca/record/soundcloud-callback.html" 
+	    redirect_uri: "http://localhost:3000/soundcloud-callback.html" 
 	  });
 	
 	  $("#recorderUI.reset #controlButton").live("click", function(e){
+        alert("We're calling the record");
 	    updateTimer(0);
 	    SC.record({
 	      start: function(){
@@ -49,34 +50,29 @@
 	  });
 	
 	  $("#upload").live("click", function(e){
+        alert("We're about to upload");
  	    setRecorderUIState("uploading");       
 	    // title and url creator goes here, but I don't really need it
 		// then I need to get SC.Oembed
 		// This appears to be a freshness issue.  Hmmm.  
 	    
 	    var upload = function(){
-          var generatedTitle = document.getElementById("sc_url").innerHTML);
-          alert(generatedTitle);
 	      $("#uploadStatus").html("Uploading...");
 	      SC.recordUpload({
 	        track: {
-	          title: generatedTitle,
+	          title: document.getElementById("sc_url").innerHTML,
 	          sharing: "public"
 	        }
 	      }, function(track){
-		      	// SC.oEmbed("http://soundcloud.com/talkaboutcode/untitled-recording", {color: "ff0066"},  document.getElementById("uploadStatus"));
-		      	// alert(track.permalink_url);
 	        	$("#uploadStatus").html("Uploaded: <a href='" + track.permalink_url + "'>" + track.permalink_url + "</a>");
 	      });
 	    }
 	
-	    // Somewhere in here I need to get my access token in.
+	    // The oauth token for talkaboutcode has been hacked in to my local sdk.js.  Yes, really.  I apologize.
 	    if(SC.isConnected()){
 	      upload();
 	    }else{
-	      SC.connect({
-	        connected: upload
-	      });
+          upload();
 	    }
 	
 	    e.preventDefault();
