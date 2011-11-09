@@ -2,7 +2,6 @@
 <td class="post">
     <span class="title"><%= post.title %> </span>
     <span class="code"><%= post.code_snippet %> </span>
-    <% puts embed(post.audio_url).class %>
     <span class="audio"><%= embed(post.audio_url) %> </span>
     <span class="timestamp"><%= post.created_at %> </span>
 </td>
