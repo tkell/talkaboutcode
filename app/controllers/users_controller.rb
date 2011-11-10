@@ -17,10 +17,12 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if params[:id].nil?
+    # SKEPTICAL 
+    if params[:id].nil? and params[:username].nil?
       @user = current_user
     else
-      @user = User.find(params[:id])
+      @user = User.find(params[:id]) if !params[:id].nil?
+      @user = User.find_by_username(params[:username]) if !params[:username].nil?
     end
 
     #@user = User.find(params[:id])

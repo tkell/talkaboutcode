@@ -16,6 +16,9 @@ Talkaboutcode::Application.routes.draw do
   match '/new',  :to => 'posts#new'
   match '/about',  :to => 'home#about'
   match '/contact',  :to => 'home#contact'
+  root :to => 'home#index'
+
+  match '/:username', :to => 'users#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -63,10 +66,6 @@ Talkaboutcode::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 
