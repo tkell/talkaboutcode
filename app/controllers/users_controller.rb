@@ -17,7 +17,13 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
+    if params[:id].nil?
+      @user = current_user
+    else
+      @user = User.find(params[:id])
+    end
+
+    #@user = User.find(params[:id])
     @posts = @user.posts
 
     respond_to do |format|
