@@ -1,23 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
-
-<p>
-  <b>Code snippet:</b>
-  <%= @post.code_snippet %>
-</p>
-
-<p>
-  <b>Audio url:</b>
-  <%= @post.audio_url %>
+<table class="posts" summary="User posts">
+     <%= render @post %>
+</table>
 </p>
 
 <p>
   <b>User:</b>
-  <%= @post.user %>
+  <%= @post.user.username %>
 </p>
 
 
