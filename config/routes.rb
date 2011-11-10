@@ -14,6 +14,8 @@ Talkaboutcode::Application.routes.draw do
 
   match '/me',  :to => 'users#show'
   match '/new',  :to => 'posts#new'
+  match '/about',  :to => 'home#about'
+  match '/contact',  :to => 'home#contact'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
