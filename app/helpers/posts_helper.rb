@@ -1,5 +1,6 @@
 require 'uri'
 require 'net/http'
+require 'cgi'
 
 module PostsHelper
 
@@ -12,9 +13,11 @@ module PostsHelper
         current_user.username.downcase + "-" + current_user.post_count.to_s
     end
 
+    # Let's try switching this to embed.ly
     def embed(url)
-        url = "/oembed?url=" + url + "&format=json"
-        http = Net::HTTP.new("soundcloud.com", "80")
+        url = CGI.escape(url)
+        url = "/1/oembed?url=" + url
+        http = Net::HTTP.new("api.embed.ly", "80")
         req = Net::HTTP::Get.new(url, {'User-Agent' => 'thoragent'})
         response = http.request(req)
 
@@ -24,10 +27,13 @@ module PostsHelper
             oembed_results = JSON.parse(r)
             oembed_results["html"].html_safe
         else
-            'oh no!'
+          error_html = '<object height="81" width="100%"><span id="html_error">Your audio has not been processed by SoundCloud yet!
+                        Please wait a moment, then refresh the page.  </span></object>'
+          error_html.html_safe   
         end
     end
 
+    # Given that none of these work, I'd rather use the above embed call
     def resolve(url)
       #http://api.soundcloud.com/resolve.json?url=http://soundcloud.com/matas/hobnotropic&client_id=YOUR_CLIENT_ID'
       sc_url = "http://api.soundcloud.com/resolve.json?"
