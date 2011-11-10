@@ -9,5 +9,14 @@
 <%= link_to "Sign up", signup_path %>
 <% end %>
 
+<br />
+<% @posts = Post.find(:all, :order => "created_at DESC", :limit => 3) %>
+<p>
+<table class="posts" summary="User posts">
+  <%= render :partial => "/posts/post_short", :collection => @posts, :as => :post%>
+</table>
+</p>
+
+
 
 
