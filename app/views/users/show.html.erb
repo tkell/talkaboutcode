@@ -18,6 +18,14 @@
 <% end %>
 </p>
 
+<p>
+<% unless @user.replies.empty? %>
+    <%= render :partial => "/replies/replies_short", :collection => @replies, :as => :reply%>
+    <%= link_to @user.replies[0].post.title, @user.replies[0].post %>
+<% end %>
+</p>
+
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

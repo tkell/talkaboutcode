@@ -25,7 +25,6 @@ class UsersController < ApplicationController
       @user = User.find_by_username(params[:username]) if !params[:username].nil?
     end
 
-    #@user = User.find(params[:id])
     @posts = @user.posts
 
     respond_to do |format|
