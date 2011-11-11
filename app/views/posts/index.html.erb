@@ -1,9 +1,8 @@
 <h1>Listing posts</h1>
 
+<%= link_to 'New Post', new_post_path %>
+<br />
 <table class="posts" summary="posts">
      <%= render :partial => "/posts/post_short", :collection => @posts, :as => :post%>
 </table>
 
-<br />
-
-<%= link_to 'New Post', new_post_path %>
