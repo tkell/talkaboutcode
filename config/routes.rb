@@ -1,8 +1,13 @@
 Talkaboutcode::Application.routes.draw do
-  resources :posts
+  resources :posts do
+    resources :replies
+  end
+
   resources :users do
     resources :posts
+    resources :replies
   end
+
   resources :sessions, :only => [:new, :create, :destroy]
 
   get "home/index"
