@@ -1,0 +1,14 @@
+How to test Talkaboutcode. 
+
+- Sign up as a new user with :username
+- Sign out.  
+- Sign in as :username
+- Create a new post at /posts/new, with a :tag and recorded soundcloud audio. 
+- View the post.  
+- Reply to the post with recorded soundcloud audio
+- Go to /, see the most current posts
+- Search for the post by :tag (and find it!)
+- View your user at /:username, including the post and the reply link
+- View all posts at /posts
+
+
