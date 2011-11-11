@@ -14,14 +14,15 @@ module PostsHelper
     end
 
     # Let's try switching this to embed.ly
+    # embed.ly are a pay service now.  You MOTHERFUCKERS.  
+    # back to SoundCloud, for now. I may have to switch this out and pay the $19 when we deploy.  
     def embed(url)
         url = CGI.escape(url)
-        url = "/1/oembed?url=" + url
-        http = Net::HTTP.new("api.embed.ly", "80")
+        url = "/oembed?url=" + url + "&format=json"
+        http = Net::HTTP.new("soundcloud.com", "80")
         req = Net::HTTP::Get.new(url, {'User-Agent' => 'thoragent'})
         response = http.request(req)
 
-        #r = Net::HTTP.get_response(URI.parse(url))
         r = response.body
         if r.bytesize > 2
             oembed_results = JSON.parse(r)
