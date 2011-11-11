@@ -34262,3 +34262,2151 @@ Served asset /sessions.js - 304 Not Modified (0ms)
 
 Started GET "/assets/users.js?body=1" for 127.0.0.1 at Thu Nov 10 19:01:37 -0800 2011
 Served asset /users.js - 304 Not Modified (0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20111105201142)
+Migrating to CreatePosts (20111107013945)
+Migrating to AddEncryptedPasswordsToUsers (20111108054025)
+Migrating to AddSaltToUsers (20111108054639)
+Migrating to AddPostCountToUsers (20111109193707)
+Migrating to CreateReplies (20111111014726)
+Migrating to ActsAsTaggableOnMigration (20111111074727)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "taggings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tag_id" integer, "taggable_id" integer, "taggable_type" varchar(255), "tagger_id" integer, "tagger_type" varchar(255), "context" varchar(255), "created_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("taggings")[0m
+  [1m[35m (0.2ms)[0m  CREATE INDEX "index_taggings_on_tag_id" ON "taggings" ("tag_id")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("taggings")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_info('index_taggings_on_tag_id')
+  [1m[36m (0.3ms)[0m  [1mCREATE INDEX "index_taggings_on_taggable_id_and_taggable_type_and_context" ON "taggings" ("taggable_id", "taggable_type", "context")[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111111074727')
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("posts")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_info('index_posts_on_user_id')
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("replies")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_info('index_replies_on_user_id')
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_info('index_replies_on_post_id')[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("taggings")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_info('index_taggings_on_taggable_id_and_taggable_type_and_context')[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_info('index_taggings_on_tag_id')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("tags")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+
+
+Started GET "/" for 127.0.0.1 at Thu Nov 10 23:49:46 -0800 2011
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC, created_at DESC LIMIT 3
+Rendered posts/_post_short.html.erb (1175.8ms)
+Rendered home/index.html.erb within layouts/application (1487.5ms)
+Compiled home.css  (2ms)  (pid 15450)
+Compiled posts.css  (1ms)  (pid 15450)
+Compiled scaffolds.css  (14ms)  (pid 15450)
+Compiled sessions.css  (1ms)  (pid 15450)
+Compiled users.css  (2ms)  (pid 15450)
+Compiled jquery.js  (10ms)  (pid 15450)
+Compiled jquery_ujs.js  (2ms)  (pid 15450)
+Compiled home.js  (433ms)  (pid 15450)
+Compiled posts.js  (293ms)  (pid 15450)
+Compiled sessions.js  (314ms)  (pid 15450)
+Compiled users.js  (264ms)  (pid 15450)
+Compiled application.js  (25ms)  (pid 15450)
+Compiled sc_recorder.js  (1ms)  (pid 15450)
+Completed 200 OK in 3098ms (Views: 3094.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Thu Nov 10 23:49:49 -0800 2011
+Served asset /home.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Thu Nov 10 23:49:49 -0800 2011
+Served asset /sessions.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Thu Nov 10 23:49:49 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Thu Nov 10 23:49:49 -0800 2011
+Served asset /users.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Thu Nov 10 23:49:49 -0800 2011
+Served asset /replys.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Thu Nov 10 23:49:49 -0800 2011
+Served asset /posts.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Thu Nov 10 23:49:49 -0800 2011
+Served asset /jquery.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Thu Nov 10 23:49:49 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Thu Nov 10 23:49:49 -0800 2011
+Served asset /home.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Thu Nov 10 23:49:49 -0800 2011
+Served asset /posts.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Thu Nov 10 23:49:49 -0800 2011
+Served asset /replys.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Thu Nov 10 23:49:49 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Thu Nov 10 23:49:49 -0800 2011
+Served asset /sessions.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Thu Nov 10 23:49:49 -0800 2011
+Served asset /users.js - 304 Not Modified (3ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at Thu Nov 10 23:49:55 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 6
+Rendered users/show.html.erb within layouts/application (64.6ms)
+Completed 200 OK in 212ms (Views: 189.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Thu Nov 10 23:49:56 -0800 2011
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Thu Nov 10 23:49:56 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Thu Nov 10 23:49:56 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Thu Nov 10 23:49:56 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Thu Nov 10 23:49:56 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Thu Nov 10 23:49:56 -0800 2011
+Served asset /replys.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Thu Nov 10 23:49:56 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Thu Nov 10 23:49:56 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Thu Nov 10 23:49:56 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Thu Nov 10 23:49:56 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Thu Nov 10 23:49:56 -0800 2011
+Served asset /replys.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Thu Nov 10 23:49:56 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Thu Nov 10 23:49:56 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Thu Nov 10 23:49:56 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Thu Nov 10 23:50:05 -0800 2011
+  Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+Rendered posts/_record.html.erb (0.5ms)
+Rendered posts/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 82ms (Views: 31.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Thu Nov 10 23:50:05 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Thu Nov 10 23:50:05 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Thu Nov 10 23:50:05 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Thu Nov 10 23:50:05 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Thu Nov 10 23:50:05 -0800 2011
+Served asset /replys.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Thu Nov 10 23:50:05 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Thu Nov 10 23:50:05 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Thu Nov 10 23:50:05 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Thu Nov 10 23:50:05 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Thu Nov 10 23:50:05 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Thu Nov 10 23:50:05 -0800 2011
+Served asset /replys.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Thu Nov 10 23:50:05 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Thu Nov 10 23:50:05 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Thu Nov 10 23:50:05 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sc_recorder.js" for 127.0.0.1 at Thu Nov 10 23:50:05 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at Thu Nov 10 23:50:30 -0800 2011
+  Processing by PostsController#create as HTML
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"Fake Tag Test", "code_snippet"=>"Fake tags!"}, "authenticity_token"=>"t/GszLdE98g5GVu2+oahCJMcq2FaagCpxXQPHNItU0U=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mSQL (9.4ms)[0m  [1mINSERT INTO "posts" ("audio_url", "code_snippet", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["audio_url", "http://soundcloud.com/talkaboutcode/thor7-1"], ["code_snippet", "Fake tags!"], ["created_at", Fri, 11 Nov 2011 07:50:30 UTC +00:00], ["title", "Fake Tag Test"], ["updated_at", Fri, 11 Nov 2011 07:50:30 UTC +00:00], ["user_id", 6]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 16 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (name LIKE 'testtag1') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "tags" WHERE "tags"."name" = 'testtag1' LIMIT 1
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "tags" ("name") VALUES (?)[0m  [["name", "testtag1"]]
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)  [["context", nil], ["created_at", Fri, 11 Nov 2011 07:50:30 UTC +00:00], ["tag_id", 1], ["taggable_id", 16], ["taggable_type", "Post"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (name LIKE 'testtage2') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "tags" WHERE "tags"."name" = 'testtage2' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("name") VALUES (?)[0m  [["name", "testtage2"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)  [["context", nil], ["created_at", Fri, 11 Nov 2011 07:50:30 UTC +00:00], ["tag_id", 2], ["taggable_id", 16], ["taggable_type", "Post"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."username" = 'Thor7' AND "users"."id" != 6) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "users" WHERE ("users"."email" = 'tho7r@thor.com' AND "users"."id" != 6) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "users" SET "post_count" = 2, "updated_at" = '2011-11-11 07:50:30.435379' WHERE "users"."id" = 6[0m
+Redirected to http://localhost:3000/posts/16
+Completed 302 Found in 300ms
+
+
+Started GET "/posts/16" for 127.0.0.1 at Thu Nov 10 23:50:30 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "16"]]
+Rendered posts/_post.html.erb (381.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mReply Load (0.3ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 16
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+Rendered posts/_record.html.erb (6.1ms)
+Rendered posts/show.html.erb within layouts/application (480.9ms)
+Completed 200 OK in 527ms (Views: 519.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Thu Nov 10 23:50:31 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Thu Nov 10 23:50:31 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Thu Nov 10 23:50:31 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Thu Nov 10 23:50:31 -0800 2011
+Served asset /replys.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Thu Nov 10 23:50:31 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Thu Nov 10 23:50:31 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Thu Nov 10 23:50:31 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Thu Nov 10 23:50:31 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Thu Nov 10 23:50:31 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Thu Nov 10 23:50:31 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Thu Nov 10 23:50:31 -0800 2011
+Served asset /replys.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Thu Nov 10 23:50:31 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Thu Nov 10 23:50:31 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Thu Nov 10 23:50:31 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sc_recorder.js" for 127.0.0.1 at Thu Nov 10 23:50:31 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts/16" for 127.0.0.1 at Thu Nov 10 23:52:18 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "16"]]
+Rendered posts/_post.html.erb (389.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 16 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 16[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+Rendered posts/_record.html.erb (2.4ms)
+Rendered posts/show.html.erb within layouts/application (634.2ms)
+Completed 200 OK in 674ms (Views: 667.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Thu Nov 10 23:52:19 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Thu Nov 10 23:52:19 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Thu Nov 10 23:52:19 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Thu Nov 10 23:52:19 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Thu Nov 10 23:52:19 -0800 2011
+Served asset /replys.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Thu Nov 10 23:52:19 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Thu Nov 10 23:52:19 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Thu Nov 10 23:52:19 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Thu Nov 10 23:52:19 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Thu Nov 10 23:52:19 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Thu Nov 10 23:52:19 -0800 2011
+Served asset /replys.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Thu Nov 10 23:52:19 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Thu Nov 10 23:52:19 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Thu Nov 10 23:52:19 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sc_recorder.js" for 127.0.0.1 at Thu Nov 10 23:52:19 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Thu Nov 10 23:54:10 -0800 2011
+  Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+Rendered posts/_record.html.erb (0.3ms)
+Rendered posts/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 207ms (Views: 136.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Thu Nov 10 23:54:10 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Thu Nov 10 23:54:10 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Thu Nov 10 23:54:10 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Thu Nov 10 23:54:10 -0800 2011
+Served asset /replys.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Thu Nov 10 23:54:10 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Thu Nov 10 23:54:10 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:10 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:10 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:10 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:10 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:10 -0800 2011
+Served asset /replys.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:10 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:10 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:10 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sc_recorder.js" for 127.0.0.1 at Thu Nov 10 23:54:10 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Thu Nov 10 23:54:21 -0800 2011
+  Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 197ms (Views: 37.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Thu Nov 10 23:54:21 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Thu Nov 10 23:54:21 -0800 2011
+Served asset /replys.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Thu Nov 10 23:54:21 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Thu Nov 10 23:54:21 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Thu Nov 10 23:54:21 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Thu Nov 10 23:54:21 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:21 -0800 2011
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:21 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:21 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:21 -0800 2011
+Served asset /posts.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:21 -0800 2011
+Served asset /replys.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:21 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:21 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:21 -0800 2011
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js" for 127.0.0.1 at Thu Nov 10 23:54:21 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at Thu Nov 10 23:54:44 -0800 2011
+  Processing by PostsController#create as HTML
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"Tags Test Too", "code_snippet"=>"blah", "tags"=>"Too1, TooToo"}, "authenticity_token"=>"t/GszLdE98g5GVu2+oahCJMcq2FaagCpxXQPHNItU0U=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: tags
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "posts" ("audio_url", "code_snippet", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["audio_url", "http://soundcloud.com/talkaboutcode/thor7-2"], ["code_snippet", "blah"], ["created_at", Fri, 11 Nov 2011 07:54:44 UTC +00:00], ["title", "Tags Test Too"], ["updated_at", Fri, 11 Nov 2011 07:54:44 UTC +00:00], ["user_id", 6]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 17 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE (name LIKE 'testtag1') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["context", nil], ["created_at", Fri, 11 Nov 2011 07:54:44 UTC +00:00], ["tag_id", 1], ["taggable_id", 17], ["taggable_type", "Post"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE (name LIKE 'testtage2') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["context", nil], ["created_at", Fri, 11 Nov 2011 07:54:44 UTC +00:00], ["tag_id", 2], ["taggable_id", 17], ["taggable_type", "Post"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."username" = 'Thor7' AND "users"."id" != 6) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'tho7r@thor.com' AND "users"."id" != 6) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  UPDATE "users" SET "updated_at" = '2011-11-11 07:54:44.928050', "post_count" = 3 WHERE "users"."id" = 6
+Redirected to http://localhost:3000/posts/17
+Completed 302 Found in 94ms
+
+
+Started GET "/posts/17" for 127.0.0.1 at Thu Nov 10 23:54:44 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1[0m  [["id", "17"]]
+Rendered posts/_post.html.erb (370.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 17 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mReply Load (0.2ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 17
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+Rendered posts/_record.html.erb (2.1ms)
+Rendered posts/show.html.erb within layouts/application (568.8ms)
+Completed 200 OK in 605ms (Views: 594.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Thu Nov 10 23:54:45 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Thu Nov 10 23:54:45 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Thu Nov 10 23:54:45 -0800 2011
+Served asset /replys.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Thu Nov 10 23:54:45 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Thu Nov 10 23:54:45 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Thu Nov 10 23:54:45 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:45 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:45 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:45 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:45 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:46 -0800 2011
+Served asset /replys.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:46 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:46 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Thu Nov 10 23:54:46 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sc_recorder.js" for 127.0.0.1 at Thu Nov 10 23:54:46 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Thu Nov 10 23:55:50 -0800 2011
+  Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 235ms (Views: 35.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Thu Nov 10 23:55:50 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Thu Nov 10 23:55:50 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Thu Nov 10 23:55:50 -0800 2011
+Served asset /replys.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Thu Nov 10 23:55:50 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Thu Nov 10 23:55:50 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Thu Nov 10 23:55:50 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Thu Nov 10 23:55:50 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Thu Nov 10 23:55:50 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Thu Nov 10 23:55:50 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Thu Nov 10 23:55:50 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Thu Nov 10 23:55:50 -0800 2011
+Served asset /replys.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Thu Nov 10 23:55:51 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Thu Nov 10 23:55:51 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Thu Nov 10 23:55:51 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sc_recorder.js" for 127.0.0.1 at Thu Nov 10 23:55:51 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at Thu Nov 10 23:56:12 -0800 2011
+  Processing by PostsController#create as HTML
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"Tags Porridge Hot", "code_snippet"=>"Cold", "tags"=>"Pot, Kettle, Black"}, "authenticity_token"=>"t/GszLdE98g5GVu2+oahCJMcq2FaagCpxXQPHNItU0U=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: tags
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "posts" ("audio_url", "code_snippet", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["audio_url", "http://soundcloud.com/talkaboutcode/thor7-3"], ["code_snippet", "Cold"], ["created_at", Fri, 11 Nov 2011 07:56:13 UTC +00:00], ["title", "Tags Porridge Hot"], ["updated_at", Fri, 11 Nov 2011 07:56:13 UTC +00:00], ["user_id", 6]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 18 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."username" = 'Thor7' AND "users"."id" != 6) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'tho7r@thor.com' AND "users"."id" != 6) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  UPDATE "users" SET "post_count" = 4, "updated_at" = '2011-11-11 07:56:13.109128' WHERE "users"."id" = 6
+Redirected to http://localhost:3000/posts/18
+Completed 302 Found in 83ms
+
+
+Started GET "/posts/18" for 127.0.0.1 at Thu Nov 10 23:56:13 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1[0m  [["id", "18"]]
+Rendered posts/_post.html.erb (384.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 18 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mReply Load (0.2ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 18
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+Rendered posts/_record.html.erb (2.0ms)
+Rendered posts/show.html.erb within layouts/application (485.9ms)
+Completed 200 OK in 520ms (Views: 514.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Thu Nov 10 23:56:13 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Thu Nov 10 23:56:13 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Thu Nov 10 23:56:14 -0800 2011
+Served asset /replys.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Thu Nov 10 23:56:14 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Thu Nov 10 23:56:14 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Thu Nov 10 23:56:14 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Thu Nov 10 23:56:14 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Thu Nov 10 23:56:14 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Thu Nov 10 23:56:14 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Thu Nov 10 23:56:14 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Thu Nov 10 23:56:14 -0800 2011
+Served asset /replys.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Thu Nov 10 23:56:14 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Thu Nov 10 23:56:14 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Thu Nov 10 23:56:14 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sc_recorder.js" for 127.0.0.1 at Thu Nov 10 23:56:14 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Fri Nov 11 00:00:11 -0800 2011
+  Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 212ms (Views: 46.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Fri Nov 11 00:00:12 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Fri Nov 11 00:00:12 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Fri Nov 11 00:00:12 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Nov 11 00:00:12 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Fri Nov 11 00:00:12 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Fri Nov 11 00:00:12 -0800 2011
+Served asset /replys.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Nov 11 00:00:12 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Nov 11 00:00:12 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Fri Nov 11 00:00:12 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Fri Nov 11 00:00:12 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Fri Nov 11 00:00:12 -0800 2011
+Served asset /replys.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Fri Nov 11 00:00:12 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Fri Nov 11 00:00:12 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Fri Nov 11 00:00:12 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sc_recorder.js" for 127.0.0.1 at Fri Nov 11 00:00:12 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at Fri Nov 11 00:00:40 -0800 2011
+  Processing by PostsController#create as HTML
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"Trying the autopost", "code_snippet"=>"maybe", "tags"=>"Baby, oh"}, "authenticity_token"=>"t/GszLdE98g5GVu2+oahCJMcq2FaagCpxXQPHNItU0U=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: tags
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "posts" ("audio_url", "code_snippet", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["audio_url", "http://soundcloud.com/talkaboutcode/thor7-4"], ["code_snippet", "maybe"], ["created_at", Fri, 11 Nov 2011 08:00:40 UTC +00:00], ["title", "Trying the autopost"], ["updated_at", Fri, 11 Nov 2011 08:00:40 UTC +00:00], ["user_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."username" = 'Thor7' AND "users"."id" != 6) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "users" WHERE ("users"."email" = 'tho7r@thor.com' AND "users"."id" != 6) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "users" SET "updated_at" = '2011-11-11 08:00:40.339576', "post_count" = 5 WHERE "users"."id" = 6[0m
+Redirected to http://localhost:3000/posts/19
+Completed 302 Found in 78ms
+
+
+Started GET "/posts/19" for 127.0.0.1 at Fri Nov 11 00:00:40 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "19"]]
+Rendered posts/_post.html.erb (385.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 19 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 19[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+Rendered posts/_record.html.erb (2.7ms)
+Rendered posts/show.html.erb within layouts/application (478.0ms)
+Completed 200 OK in 511ms (Views: 503.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Fri Nov 11 00:00:41 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Fri Nov 11 00:00:41 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Nov 11 00:00:41 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Fri Nov 11 00:00:41 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Fri Nov 11 00:00:41 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Fri Nov 11 00:00:41 -0800 2011
+Served asset /replys.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Nov 11 00:00:41 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Nov 11 00:00:41 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Fri Nov 11 00:00:41 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Fri Nov 11 00:00:41 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Fri Nov 11 00:00:41 -0800 2011
+Served asset /replys.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Fri Nov 11 00:00:41 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Fri Nov 11 00:00:41 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Fri Nov 11 00:00:41 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sc_recorder.js" for 127.0.0.1 at Fri Nov 11 00:00:41 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (6ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Fri Nov 11 00:01:13 -0800 2011
+  Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 228ms (Views: 48.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Fri Nov 11 00:01:13 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Fri Nov 11 00:01:13 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Fri Nov 11 00:01:13 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Nov 11 00:01:13 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Fri Nov 11 00:01:13 -0800 2011
+Served asset /users.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Fri Nov 11 00:01:13 -0800 2011
+Served asset /replys.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Nov 11 00:01:13 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Nov 11 00:01:13 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Fri Nov 11 00:01:13 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Fri Nov 11 00:01:13 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Fri Nov 11 00:01:13 -0800 2011
+Served asset /replys.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Fri Nov 11 00:01:14 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Fri Nov 11 00:01:14 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Fri Nov 11 00:01:14 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sc_recorder.js" for 127.0.0.1 at Fri Nov 11 00:01:14 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at Fri Nov 11 00:01:42 -0800 2011
+  Processing by PostsController#create as HTML
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"the way", "code_snippet"=>"you wiggle that thing really knocks me out", "tags"=>"rock, roll, hoochie, koo"}, "authenticity_token"=>"t/GszLdE98g5GVu2+oahCJMcq2FaagCpxXQPHNItU0U=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+WARNING: Can't mass-assign protected attributes: tags
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "posts" ("audio_url", "code_snippet", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["audio_url", "http://soundcloud.com/talkaboutcode/thor7-5"], ["code_snippet", "you wiggle that thing really knocks me out"], ["created_at", Fri, 11 Nov 2011 08:01:42 UTC +00:00], ["title", "the way"], ["updated_at", Fri, 11 Nov 2011 08:01:42 UTC +00:00], ["user_id", 6]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 20 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (name LIKE 'rock') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "tags" WHERE "tags"."name" = 'rock' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("name") VALUES (?)[0m  [["name", "rock"]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)  [["context", nil], ["created_at", Fri, 11 Nov 2011 08:01:42 UTC +00:00], ["tag_id", 3], ["taggable_id", 20], ["taggable_type", "Post"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (name LIKE 'roll') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "tags" WHERE "tags"."name" = 'roll' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tags" ("name") VALUES (?)[0m  [["name", "roll"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)  [["context", nil], ["created_at", Fri, 11 Nov 2011 08:01:42 UTC +00:00], ["tag_id", 4], ["taggable_id", 20], ["taggable_type", "Post"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (name LIKE 'hoochie') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "tags" WHERE "tags"."name" = 'hoochie' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tags" ("name") VALUES (?)[0m  [["name", "hoochie"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)  [["context", nil], ["created_at", Fri, 11 Nov 2011 08:01:42 UTC +00:00], ["tag_id", 5], ["taggable_id", 20], ["taggable_type", "Post"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (name LIKE 'koo') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "tags" WHERE "tags"."name" = 'koo' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tags" ("name") VALUES (?)[0m  [["name", "koo"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)  [["context", nil], ["created_at", Fri, 11 Nov 2011 08:01:42 UTC +00:00], ["tag_id", 6], ["taggable_id", 20], ["taggable_type", "Post"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."username" = 'Thor7' AND "users"."id" != 6) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."email" = 'tho7r@thor.com' AND "users"."id" != 6) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "users" SET "updated_at" = '2011-11-11 08:01:42.791950', "post_count" = 6 WHERE "users"."id" = 6[0m
+Redirected to http://localhost:3000/posts/20
+Completed 302 Found in 123ms
+
+
+Started GET "/posts/20" for 127.0.0.1 at Fri Nov 11 00:01:42 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "20"]]
+Rendered posts/_post.html.erb (376.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 20 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mReply Load (0.2ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 20[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+Rendered posts/_record.html.erb (1.9ms)
+Rendered posts/show.html.erb within layouts/application (475.5ms)
+Completed 200 OK in 533ms (Views: 524.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Fri Nov 11 00:01:43 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Fri Nov 11 00:01:43 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Nov 11 00:01:43 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Fri Nov 11 00:01:43 -0800 2011
+Served asset /replys.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Fri Nov 11 00:01:43 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Fri Nov 11 00:01:43 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Nov 11 00:01:43 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Nov 11 00:01:43 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Fri Nov 11 00:01:43 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Fri Nov 11 00:01:43 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Fri Nov 11 00:01:43 -0800 2011
+Served asset /replys.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Fri Nov 11 00:01:43 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Fri Nov 11 00:01:43 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Fri Nov 11 00:01:43 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sc_recorder.js" for 127.0.0.1 at Fri Nov 11 00:01:43 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/rock" for 127.0.0.1 at Fri Nov 11 00:05:53 -0800 2011
+  Processing by PostsController#index as HTML
+  Parameters: {"tag"=>"rock"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `tagged_with' for #<Class:0x7f2db1bcf6e8>):
+  app/controllers/posts_controller.rb:11:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.1ms)
+
+
+Started GET "/tags/rock" for 127.0.0.1 at Fri Nov 11 00:06:37 -0800 2011
+
+ActionController::RoutingError (undefined method `named_scope' for #<Class:0x7f2db205c788>):
+  app/models/post.rb:8
+  app/controllers/posts_controller.rb:1
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/tags/rock" for 127.0.0.1 at Fri Nov 11 00:08:52 -0800 2011
+  Processing by PostsController#index as HTML
+  Parameters: {"tag"=>"rock"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `tagged_with' for #<Class:0x7f89a93ae280>):
+  app/controllers/posts_controller.rb:11:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.7ms)
+
+
+Started GET "/tags" for 127.0.0.1 at Fri Nov 11 00:09:32 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"username"=>"tags"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'tags' LIMIT 1[0m
+Completed 500 Internal Server Error in 16ms
+
+NoMethodError (undefined method `posts' for nil:NilClass):
+  app/controllers/users_controller.rb:29:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (94.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (101.0ms)
+
+
+Started GET "/tags/" for 127.0.0.1 at Fri Nov 11 00:09:36 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"username"=>"tags"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'tags' LIMIT 1
+Completed 500 Internal Server Error in 12ms
+
+NoMethodError (undefined method `posts' for nil:NilClass):
+  app/controllers/users_controller.rb:29:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+
+
+Started GET "/tags/" for 127.0.0.1 at Fri Nov 11 00:10:02 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"username"=>"tags"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'tags' LIMIT 1[0m
+Completed 500 Internal Server Error in 6ms
+
+NoMethodError (undefined method `posts' for nil:NilClass):
+  app/controllers/users_controller.rb:29:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.6ms)
+
+
+Started GET "/tags" for 127.0.0.1 at Fri Nov 11 00:10:13 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"username"=>"tags"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'tags' LIMIT 1
+Completed 500 Internal Server Error in 8ms
+
+NoMethodError (undefined method `posts' for nil:NilClass):
+  app/controllers/users_controller.rb:29:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.3ms)
+
+
+Started GET "/tags" for 127.0.0.1 at Fri Nov 11 00:10:30 -0800 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (109.6ms)
+Completed 200 OK in 299ms (Views: 291.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Fri Nov 11 00:10:31 -0800 2011
+Served asset /home.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Fri Nov 11 00:10:31 -0800 2011
+Served asset /posts.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Fri Nov 11 00:10:31 -0800 2011
+Served asset /replys.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Nov 11 00:10:31 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Fri Nov 11 00:10:31 -0800 2011
+Served asset /sessions.css - 304 Not Modified (25ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Fri Nov 11 00:10:31 -0800 2011
+Served asset /users.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Nov 11 00:10:31 -0800 2011
+Served asset /jquery.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Nov 11 00:10:31 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Fri Nov 11 00:10:31 -0800 2011
+Served asset /home.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Fri Nov 11 00:10:31 -0800 2011
+Served asset /posts.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Fri Nov 11 00:10:31 -0800 2011
+Served asset /replys.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Fri Nov 11 00:10:31 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Fri Nov 11 00:10:31 -0800 2011
+Served asset /sessions.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Fri Nov 11 00:10:31 -0800 2011
+Served asset /users.js - 304 Not Modified (3ms)
+
+
+Started GET "/posts/20" for 127.0.0.1 at Fri Nov 11 00:10:41 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "20"]]
+Rendered posts/_post.html.erb (378.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 20 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mReply Load (0.2ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 20[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+Rendered posts/_record.html.erb (2.4ms)
+Rendered posts/show.html.erb within layouts/application (608.3ms)
+Completed 200 OK in 649ms (Views: 634.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Nov 11 00:10:42 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Fri Nov 11 00:10:42 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Fri Nov 11 00:10:42 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Fri Nov 11 00:10:42 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Fri Nov 11 00:10:42 -0800 2011
+Served asset /replys.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Fri Nov 11 00:10:42 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Nov 11 00:10:42 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Nov 11 00:10:42 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Fri Nov 11 00:10:42 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Fri Nov 11 00:10:42 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Fri Nov 11 00:10:42 -0800 2011
+Served asset /replys.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Fri Nov 11 00:10:42 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Fri Nov 11 00:10:42 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Fri Nov 11 00:10:42 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sc_recorder.js" for 127.0.0.1 at Fri Nov 11 00:10:42 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/rock" for 127.0.0.1 at Fri Nov 11 00:10:53 -0800 2011
+  Processing by PostsController#index as HTML
+  Parameters: {"tag"=>"rock"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `tagged_with' for #<Class:0x7f89a93643d8>):
+  app/controllers/posts_controller.rb:11:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.5ms)
+
+
+Started GET "/tags/rock" for 127.0.0.1 at Fri Nov 11 00:14:02 -0800 2011
+  Processing by PostsController#index as HTML
+  Parameters: {"tag"=>"rock"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `tagged_with' for #<Class:0x7f89a9528840>):
+  app/controllers/posts_controller.rb:11:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.3ms)
+
+
+Started GET "/tags/rock" for 127.0.0.1 at Fri Nov 11 00:19:39 -0800 2011
+  Processing by PostsController#index as HTML
+  Parameters: {"tag"=>"rock"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 20 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 19 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 18 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (12.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 17 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 16 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 15 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 14 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (5.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (54.4ms)
+Completed 200 OK in 141ms (Views: 79.7ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Fri Nov 11 00:19:40 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Fri Nov 11 00:19:40 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Fri Nov 11 00:19:40 -0800 2011
+Served asset /replys.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Nov 11 00:19:40 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Fri Nov 11 00:19:40 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Fri Nov 11 00:19:40 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Nov 11 00:19:40 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Nov 11 00:19:40 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Fri Nov 11 00:19:40 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Fri Nov 11 00:19:40 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Fri Nov 11 00:19:40 -0800 2011
+Served asset /replys.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Fri Nov 11 00:19:40 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Fri Nov 11 00:19:40 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Fri Nov 11 00:19:40 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/rock" for 127.0.0.1 at Fri Nov 11 00:24:29 -0800 2011
+  Processing by PostsController#index as HTML
+  Parameters: {"tag"=>"rock"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 20 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 19 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 18 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 17 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 16 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 15 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 14 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered posts/index.html.erb within layouts/application (172.7ms)
+Completed 200 OK in 254ms (Views: 202.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Fri Nov 11 00:24:29 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Fri Nov 11 00:24:29 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Fri Nov 11 00:24:29 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Nov 11 00:24:29 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Fri Nov 11 00:24:29 -0800 2011
+Served asset /replys.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Fri Nov 11 00:24:29 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Nov 11 00:24:29 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Nov 11 00:24:29 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Fri Nov 11 00:24:30 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Fri Nov 11 00:24:30 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Fri Nov 11 00:24:30 -0800 2011
+Served asset /replys.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Fri Nov 11 00:24:30 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Fri Nov 11 00:24:30 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Fri Nov 11 00:24:30 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/rock" for 127.0.0.1 at Fri Nov 11 00:25:16 -0800 2011
+  Processing by PostsController#index as HTML
+  Parameters: {"tag"=>"rock"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 20 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 19 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 18 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 17 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 16 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 15 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 14 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Post'[0m
+Completed 500 Internal Server Error in 43ms
+
+NoMethodError (undefined method `tags' for []:Array):
+  app/controllers/posts_controller.rb:19:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.3ms)
+
+
+Started GET "/tags/rock" for 127.0.0.1 at Fri Nov 11 00:25:25 -0800 2011
+  Processing by PostsController#index as HTML
+  Parameters: {"tag"=>"rock"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 20 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 19 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 18 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 17 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 16 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 15 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 14 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Post'
+Completed 500 Internal Server Error in 146ms
+
+NoMethodError (undefined method `tags' for nil:NilClass):
+  app/controllers/posts_controller.rb:19:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/tags/rock" for 127.0.0.1 at Fri Nov 11 00:26:02 -0800 2011
+  Processing by PostsController#index as HTML
+  Parameters: {"tag"=>"rock"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC[0m
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 20 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.7ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 19 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (1.6ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 18 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 17 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 16 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 15 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 14 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (164.3ms)
+Completed 200 OK in 265ms (Views: 191.5ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Nov 11 00:26:02 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Fri Nov 11 00:26:02 -0800 2011
+Served asset /replys.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Fri Nov 11 00:26:02 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Fri Nov 11 00:26:02 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Fri Nov 11 00:26:02 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Fri Nov 11 00:26:02 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Nov 11 00:26:02 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Nov 11 00:26:02 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Fri Nov 11 00:26:02 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Fri Nov 11 00:26:02 -0800 2011
+Served asset /posts.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Fri Nov 11 00:26:02 -0800 2011
+Served asset /replys.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Fri Nov 11 00:26:02 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Fri Nov 11 00:26:02 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Fri Nov 11 00:26:02 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/rock" for 127.0.0.1 at Fri Nov 11 00:26:47 -0800 2011
+  Processing by PostsController#index as HTML
+  Parameters: {"tag"=>"rock"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 20 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 19 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 18 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 17 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 16 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 15 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 14 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered posts/index.html.erb within layouts/application (60.3ms)
+Completed 200 OK in 151ms (Views: 93.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Fri Nov 11 00:26:47 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Nov 11 00:26:47 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Fri Nov 11 00:26:47 -0800 2011
+Served asset /replys.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Fri Nov 11 00:26:47 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Fri Nov 11 00:26:47 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Fri Nov 11 00:26:47 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Nov 11 00:26:47 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Nov 11 00:26:47 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Fri Nov 11 00:26:47 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Fri Nov 11 00:26:47 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Fri Nov 11 00:26:47 -0800 2011
+Served asset /replys.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Fri Nov 11 00:26:47 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Fri Nov 11 00:26:47 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Fri Nov 11 00:26:47 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/rock" for 127.0.0.1 at Fri Nov 11 00:27:26 -0800 2011
+  Processing by PostsController#index as HTML
+  Parameters: {"tag"=>"rock"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 20 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 19 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 18 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 17 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 16 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 15 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 14 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (164.0ms)
+Completed 200 OK in 238ms (Views: 194.6ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Fri Nov 11 00:27:26 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Nov 11 00:27:26 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Fri Nov 11 00:27:26 -0800 2011
+Served asset /replys.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Fri Nov 11 00:27:26 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Fri Nov 11 00:27:26 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Fri Nov 11 00:27:26 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Nov 11 00:27:26 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Nov 11 00:27:26 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Fri Nov 11 00:27:26 -0800 2011
+Served asset /home.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Fri Nov 11 00:27:26 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Fri Nov 11 00:27:26 -0800 2011
+Served asset /replys.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Fri Nov 11 00:27:26 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Fri Nov 11 00:27:26 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Fri Nov 11 00:27:26 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/rock" for 127.0.0.1 at Fri Nov 11 00:27:43 -0800 2011
+  Processing by PostsController#index as HTML
+  Parameters: {"tag"=>"rock"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 20 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 19 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 18 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 17 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 16 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 15 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 14 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered posts/index.html.erb within layouts/application (78.6ms)
+Completed 200 OK in 164ms (Views: 108.7ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Fri Nov 11 00:27:44 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Fri Nov 11 00:27:44 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Fri Nov 11 00:27:44 -0800 2011
+Served asset /replys.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Fri Nov 11 00:27:44 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Nov 11 00:27:44 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Fri Nov 11 00:27:44 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Nov 11 00:27:44 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Nov 11 00:27:44 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Fri Nov 11 00:27:44 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Fri Nov 11 00:27:44 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Fri Nov 11 00:27:44 -0800 2011
+Served asset /replys.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Fri Nov 11 00:27:44 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Fri Nov 11 00:27:44 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Fri Nov 11 00:27:44 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/rock" for 127.0.0.1 at Fri Nov 11 00:29:48 -0800 2011
+  Processing by PostsController#index as HTML
+  Parameters: {"tag"=>"rock"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 20 AND "taggings"."taggable_type" = 'Post'
+Completed 500 Internal Server Error in 20ms
+
+NoMethodError (undefined method `tag_lists' for #<Post:0x7f89a95a6e70>):
+  app/controllers/posts_controller.rb:16:in `index'
+  app/controllers/posts_controller.rb:14:in `each'
+  app/controllers/posts_controller.rb:14:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.0ms)
+
+
+Started GET "/tags/rock" for 127.0.0.1 at Fri Nov 11 00:29:55 -0800 2011
+  Processing by PostsController#index as HTML
+  Parameters: {"tag"=>"rock"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 20 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 19 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 18 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 17 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 16 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 15 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 14 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (55.9ms)
+Completed 200 OK in 143ms (Views: 85.8ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Fri Nov 11 00:29:55 -0800 2011
+Served asset /replys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Fri Nov 11 00:29:55 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Fri Nov 11 00:29:55 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Fri Nov 11 00:29:55 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Nov 11 00:29:55 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Fri Nov 11 00:29:56 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Nov 11 00:29:56 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Nov 11 00:29:56 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Fri Nov 11 00:29:56 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Fri Nov 11 00:29:56 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Fri Nov 11 00:29:56 -0800 2011
+Served asset /replys.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Fri Nov 11 00:29:56 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Fri Nov 11 00:29:56 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Fri Nov 11 00:29:56 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/rock" for 127.0.0.1 at Fri Nov 11 00:30:33 -0800 2011
+  Processing by PostsController#index as HTML
+  Parameters: {"tag"=>"rock"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC
+  [1m[36mTag Load (12.7ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 20 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 19 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 18 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 17 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 16 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 15 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 14 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (136.2ms)
+Completed 200 OK in 239ms (Views: 168.1ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Fri Nov 11 00:30:33 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Fri Nov 11 00:30:33 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Fri Nov 11 00:30:33 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Nov 11 00:30:33 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Fri Nov 11 00:30:33 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Nov 11 00:30:33 -0800 2011
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Fri Nov 11 00:30:33 -0800 2011
+Served asset /replys.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Nov 11 00:30:33 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Fri Nov 11 00:30:33 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Fri Nov 11 00:30:33 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Fri Nov 11 00:30:33 -0800 2011
+Served asset /replys.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Fri Nov 11 00:30:33 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Fri Nov 11 00:30:33 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Fri Nov 11 00:30:33 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/koo" for 127.0.0.1 at Fri Nov 11 00:30:48 -0800 2011
+  Processing by PostsController#index as HTML
+  Parameters: {"tag"=>"koo"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC
+  [1m[36mTag Load (7.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 20 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 19 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 18 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 17 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 16 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 15 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mTag Load (12.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 14 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Post'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 148ms (Views: 61.8ms | ActiveRecord: 23.8ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at Fri Nov 11 00:30:48 -0800 2011
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at Fri Nov 11 00:30:48 -0800 2011
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.css?body=1" for 127.0.0.1 at Fri Nov 11 00:30:48 -0800 2011
+Served asset /replys.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Nov 11 00:30:48 -0800 2011
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Fri Nov 11 00:30:48 -0800 2011
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at Fri Nov 11 00:30:48 -0800 2011
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Nov 11 00:30:48 -0800 2011
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Nov 11 00:30:49 -0800 2011
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Fri Nov 11 00:30:49 -0800 2011
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at Fri Nov 11 00:30:49 -0800 2011
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/replys.js?body=1" for 127.0.0.1 at Fri Nov 11 00:30:49 -0800 2011
+Served asset /replys.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc_recorder.js?body=1" for 127.0.0.1 at Fri Nov 11 00:30:49 -0800 2011
+Served asset /sc_recorder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at Fri Nov 11 00:30:49 -0800 2011
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at Fri Nov 11 00:30:49 -0800 2011
+Served asset /users.js - 304 Not Modified (0ms)

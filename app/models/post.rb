@@ -4,6 +4,8 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :replies
 
+  acts_as_taggable
+
   # I don't think I want to validate audio_url, because it might take a while to appear...
   validates :title, :presence => true
   validates :code_snippet, :presence => true

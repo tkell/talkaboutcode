@@ -23,7 +23,10 @@ Talkaboutcode::Application.routes.draw do
   match '/contact',  :to => 'home#contact'
   root :to => 'home#index'
 
+  match '/tags/', :to => 'posts#index'
+  match '/tags/:tag', :to => 'posts#index'
   match '/:username', :to => 'users#show'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

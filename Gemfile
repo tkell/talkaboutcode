@@ -9,6 +9,8 @@ gem 'sqlite3'
 
 gem 'json'
 
+gem 'acts-as-taggable-on'
+
 group :production do
     # gems specifically for Heroku go here
     gem 'pg'

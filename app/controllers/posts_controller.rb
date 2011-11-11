@@ -7,6 +7,21 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
+    # hack because stupid tagged_with doesn't work
+    if !params[:tag].nil?
+      puts "DEBUG"
+      correct_posts = []
+      @posts.each do |post|
+        if post.tag_list.index(params[:tag]) != nil
+          correct_posts.push(post) 
+          puts post.tag_list       
+        end
+      end
+      @posts = correct_posts
+    end
+
+
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @posts }
@@ -44,6 +59,11 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(params[:post])
     @post.audio_url = generate_sc_url
+
+    puts "DEBUG"
+    puts params[:post]["tags"]
+
+    @post.tag_list = params[:post]["tags"]
 
     respond_to do |format|
       if @post.save

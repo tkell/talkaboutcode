@@ -16,6 +16,11 @@
 </p>
 
 <p>
+  <b>Tags:</b>
+  <%= @post.tags %>
+</p>
+
+<p>
   <b>Replies:</b>
   <% @post.replies.each do |reply| %>
     <%= embed(reply.audio_url) %>
