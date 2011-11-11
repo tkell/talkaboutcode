@@ -18,15 +18,16 @@ module PostsHelper
     # back to SoundCloud, for now. I may have to switch this out and pay the $19 when we deploy.  
     def embed(url)
         url = CGI.escape(url)
-        url = "/oembed?url=" + url + "&format=json"
+        url = "/oembed?url=" + url + "&format=json&show_comments=false"
         http = Net::HTTP.new("soundcloud.com", "80")
         req = Net::HTTP::Get.new(url, {'User-Agent' => 'thoragent'})
         response = http.request(req)
 
         r = response.body
         if r.bytesize > 2
-            oembed_results = JSON.parse(r)
-            oembed_results["html"].html_safe
+            oembed_results = JSON.parse(r) 
+            oembed_html = oembed_results["html"][0..-148] # 100% jank to remove the soundcloud link.  Will get weird if SC change their oEmbed response
+            oembed_html.html_safe
         else
           error_html = '<object height="81" width="100%"><span id="html_error">Your audio has not been processed by SoundCloud yet!
                         Please wait a moment, then refresh the page.  </span></object>'

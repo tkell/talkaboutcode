@@ -12,6 +12,7 @@
 
 <p>
 <% unless @user.posts.empty? %>
+   <b>Your Posts:</b>
     <table class="posts" summary="User posts">
          <%= render :partial => "/posts/post_short", :collection => @posts, :as => :post%>
     </table>
@@ -20,6 +21,7 @@
 
 <p>
 <% unless @user.replies.empty? %>
+    <b>Posts You've Replied To:</b> 
     <%= render :partial => "/replies/replies_short", :collection => @replies, :as => :reply%>
     <%= link_to @user.replies[0].post.title, @user.replies[0].post %>
 <% end %>
