@@ -1,27 +1,7 @@
 <h1>Listing posts</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Code snippet</th>
-    <th>Audio url</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.code_snippet %></td>
-    <td><%= post.audio_url %></td>
-    <td><%= post.user %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+<table class="posts" summary="posts">
+     <%= render :partial => "/posts/post_short", :collection => @posts, :as => :post%>
 </table>
 
 <br />

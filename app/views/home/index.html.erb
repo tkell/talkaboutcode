@@ -12,7 +12,7 @@
 <br />
 <% @posts = Post.find(:all, :order => "created_at DESC", :limit => 3) %>
 <p>
-<table class="posts" summary="User posts">
+<table class="posts" summary="current posts">
   <%= render :partial => "/posts/post_short", :collection => @posts, :as => :post%>
 </table>
 </p>

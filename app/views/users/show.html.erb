@@ -13,7 +13,7 @@
 <p>
 <% unless @user.posts.empty? %>
     <table class="posts" summary="User posts">
-         <%= render @posts %>
+         <%= render :partial => "/posts/post_short", :collection => @posts, :as => :post%>
     </table>
 <% end %>
 </p>
