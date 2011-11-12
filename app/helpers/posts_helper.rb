@@ -17,13 +17,8 @@ module PostsHelper
     # embed.ly are a pay service now.  You MOTHERFUCKERS.  
     # back to SoundCloud, for now. I may have to switch this out and pay the $19 when we deploy.  
     def embed(url)
-        url = CGI.escape(url)
-        url = "/oembed?url=" + url + "&format=json&show_comments=false"
-        http = Net::HTTP.new("soundcloud.com", "80")
-        req = Net::HTTP::Get.new(url, {'User-Agent' => 'thoragent'})
-        response = http.request(req)
-
-        r = response.body
+        url = "http://soundcloud.com/oembed?format=json&show_comments=false&url=" + url
+        r = Net::HTTP.get(URI.parse(url))
         if r.bytesize > 2
             oembed_results = JSON.parse(r) 
             oembed_html = oembed_results["html"][0..-148] # 100% jank to remove the soundcloud link.  Will get weird if SC change their oEmbed response
