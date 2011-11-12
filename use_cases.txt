@@ -1,4 +1,6 @@
-How to test Talkaboutcode. 
+How to test Talkaboutcode:  
+
+ALL PASSING as of 11/11/11.  
 
 - Sign up as a new user with :username
 - Go to /me, see your user page
