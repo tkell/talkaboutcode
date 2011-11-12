@@ -13,9 +13,7 @@ module PostsHelper
         current_user.username.downcase + "-" + current_user.post_count.to_s
     end
 
-    # Let's try switching this to embed.ly
-    # embed.ly are a pay service now.  You MOTHERFUCKERS.  
-    # back to SoundCloud, for now. I may have to switch this out and pay the $19 when we deploy.  
+    # This works, thanks to Johannes Wagener.  
     def embed(url)
         url = "http://soundcloud.com/oembed?format=json&show_comments=false&url=" + url
         r = Net::HTTP.get(URI.parse(url))
