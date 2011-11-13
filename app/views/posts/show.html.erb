@@ -30,16 +30,19 @@
   <% end %>
 </p>
 
-
-<p>
-  <b>Post Reply:</b>
-  <%= form_for [@post, @post.replies.build] do |f| %>
-  <%= render 'record' %>
-  <div class="actions">
-    <%= f.submit "Post Reply" %>
-  </div>
+<% if signed_in? %>
+    <p>
+      <b>Post Reply:</b>
+      <%= form_for [@post, @post.replies.build] do |f| %>
+      <%= render 'record' %>
+      <div class="actions">
+        <%= f.submit "Post Reply" %>
+      </div>
+    <% end %>
+    </p>
+<% else %>
+    <%= link_to "Sign in to post a reply", signin_path %>
 <% end %>
-</p>
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

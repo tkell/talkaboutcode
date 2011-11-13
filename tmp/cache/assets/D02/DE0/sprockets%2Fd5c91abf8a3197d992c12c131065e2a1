@@ -1,4 +1,4 @@
-o: ActiveSupport::Cache::Entry	:@expires_in0:@value{"asset_paths["($root/app/assets/javascripts/sdk.js"	body"bBvar __hasProp=Object.prototype.hasOwnProperty,__bind=function(a,b){return function(){return a.apply(b,arguments)}};
+o: ActiveSupport::Cache::Entry	:@expires_in0:@value{	"_version"%d719d370887c1b396308e77753879721"digest"%e75cac514152c2a2c80e4e85c194528b"lengthibB"source"bBvar __hasProp=Object.prototype.hasOwnProperty,__bind=function(a,b){return function(){return a.apply(b,arguments)}};
 window.SC||(window.SC={options:{site:"soundcloud.com"},connectCallbacks:{},_popupWindow:void 0,initialize:function(a){var b,c,d;a==null&&(a={});this.accessToken(a.access_token);for(b in a)__hasProp.call(a,b)&&(c=a[b],this.options[b]=c);(d=this.options).flashXHR||(d.flashXHR=(new XMLHttpRequest).withCredentials===void 0);return this},hostname:function(a){var b;b="";a!=null&&(b+=a+".");b+=this.options.site;return b},connect:function(a){var b;a.client_id||(a.client_id=SC.options.client_id);a.redirect_uri||
 (a.redirect_uri=SC.options.redirect_uri);SC.connectCallbacks.success=a.connected;SC.connectCallbacks.error=a.error;SC.connectCallbacks.general=a.callback;if(a.client_id&&a.redirect_uri)return b=new SC.URI("https://"+this.hostname()+"/connect/?"),b.query={client_id:a.client_id,redirect_uri:a.redirect_uri,response_type:"code_and_token",scope:a.scope||"non-expiring",display:"popup"},SC._popupWindow=SC.Helper.openCenteredPopup(b.toString(),456,510);else throw"Either client_id and redirect_uri (for user agent flow) must be passed as an option";
 },connectCallback:function(){var a,b,c;b=SC._popupWindow;c=new SC.URI(b.location.toString(),{decodeQuery:!0,decodeFragment:!0});a=c.query.error||c.fragment.error;b.close();if(a)throw Error("SC OAuth2 Error: "+c.query.error_description);else SC.accessToken(c.fragment.access_token),SC._trigger("success");return SC._trigger("general",a)},disconnect:function(){return this.accessToken(null)},_trigger:function(a,b){if(this.connectCallbacks[a]!=null)return this.connectCallbacks[a](b)},accessToken:function(a){var b;
@@ -311,7 +311,4 @@ window.SC.URI = function(uri, options) {
   this.parse(uri, options);
   return this;
 };
-"content_type"application/javascript"
-class"BundledAsset"
-mtime"2011-11-11T19:25:23-08:00"_version"%4cb2ee12166a4b69b8fba75205972b7a"id"%d719d370887c1b396308e77753879721"dependency_paths[{"hexdigest"%e75cac514152c2a2c80e4e85c194528b"
-mtimeu:	Timeƒé€  pe"	path"($root/app/assets/javascripts/sdk.js"pathname"($root/app/assets/javascripts/sdk.js"logical_path"sdk.js:@compressedF:@created_atf1321142661.3786719 <)
+:@compressedF:@created_atf1321142662.1279559 0n
