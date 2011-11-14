@@ -1,8 +1,9 @@
 <tr>
 <td class="post">
-    <span class="title"><%= post.title %> </span>
+    <strong> <span class="title"><%= post.title %> </span> </strong>
     <span class="timestamp"><%= post.created_at %> </span>
-    <span class="code"><%= post.code_snippet %> </span>
+    <br />
+    Code:  <div class="codebox" style="width: 250px; height: 250px; border: 1px solid;"><span class="code"><%= post.code_snippet %> </span></div>
     <span class="audio"><%= embed(post.audio_url) %> </span>
 </td>
 </tr>
