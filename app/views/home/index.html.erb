@@ -1,21 +1,5 @@
 <h1>Hello, talkaboutco.de</h1>
 
-<% if signed_in? %>
-<%= link_to "You", current_user %>
-<%= link_to "Sign out", signout_path %>
-<% else %>
-<%= link_to "Sign in", signin_path %>
-<%= link_to "Sign up", signup_path %>
-<% end %>
-
-<br />
-
-<%= form_tag("/tags", :method => "get") do %>
-  <%= label_tag(:tag, "Search by tag:") %>
-  <%= text_field_tag(:tag) %>
-  <%= submit_tag("Go!") %>
-<% end %>
-
 <br />
 <% @posts = Post.find(:all, :order => "created_at DESC", :limit => 3) %>
 <p>
