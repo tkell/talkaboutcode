@@ -1,9 +1,4 @@
 <h1>New post</h1>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-<script src="/assets/sdk.js"></script>
-<script src="/assets/sc_recorder.js"></script>
-
 <%= form_for @post do |f| %>
   <div class="field">
     Title:  <%= f.text_field :title %>
@@ -25,4 +20,6 @@
 
 <%= link_to 'Back', posts_path %>
 
-<script>document.getElementsByName('commit')[0].disabled = true;</script>
+<script>
+document.getElementsByName('commit')[1].disabled = true;
+</script>

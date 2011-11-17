@@ -1,9 +1,4 @@
 <p id="notice"><%= notice %></p>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-<script src="/assets/sdk.js"></script>  
-<script src="/assets/sc_recorder.js"></script>  
-
 <p>
 <table class="posts" summary="User posts">
      <%= render @post %>
@@ -47,4 +42,7 @@
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
-<script>document.getElementsByName('commit')[0].disabled = true;</script>
+
+<script>
+document.getElementsByName('commit')[1].disabled = true;
+</script>
