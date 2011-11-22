@@ -9,7 +9,6 @@ class PostsController < ApplicationController
 
     # hack because stupid tagged_with doesn't work
     if !params[:tag].nil?
-      puts "DEBUG"
       correct_posts = []
       @posts.each do |post|
         if post.tag_list.index(params[:tag]) != nil

@@ -1,5 +1,8 @@
 How to test Talkaboutcode:  
 
+## Need to add stuff about deleting posts.  
+
+
 ALL PASSING as of 11/16/11.  
 
 	- Sign up as a new user with :username

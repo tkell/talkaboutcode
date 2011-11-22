@@ -27,5 +27,7 @@
     </td>
 </tr>
 </table>
-
+    <% if signed_in? and post.user == current_user %>
+        <%= button_to "Delete Post", post, :method => :delete %>  
+    <% end %>
 </div>

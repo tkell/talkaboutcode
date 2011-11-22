@@ -16,5 +16,4 @@ class RepliesController < ApplicationController
 
     redirect_to post_path(@post)
   end
-
 end
