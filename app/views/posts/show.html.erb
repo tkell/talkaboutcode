@@ -1,12 +1,15 @@
 <%= render @post %>
 
-<p>
-  <b>Replies:</b>
-  <% @post.replies.each do |reply| %>
-    <%= embed(reply.audio_url) %>
-    By <%= reply.user.username %>
-  <% end %>
-</p>
+<div class="post_area">
+<table cellspacing="0" id="replies">
+<tr>
+    <td id="post_hdr">
+    <strong>Replies:</strong>   
+    </td>
+</tr>
+ <%= render :partial => "/replies/replies", :collection => @post.replies, :as => :reply%>
+</table>
+</div>
 
 <% if signed_in? %>
     <p>

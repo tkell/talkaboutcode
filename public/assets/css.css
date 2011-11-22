@@ -46,7 +46,7 @@ body  {
 	width:1200px;
 	padding:0px;
 	border:0px;
-	text-indent:150px
+    padding-left:150px;
 }
 
 #main_ftr	{
@@ -85,7 +85,6 @@ body  {
 /*POST BOX PROPERTIES*/
 
 .post_area	{
-	margin-left:125px;
 	margin-top:20px;
 	margin-bottom:20px;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -130,6 +129,37 @@ body  {
     padding:0px;
 }
 
+#reply_hdr	{
+	background:url(img/post_hdr_bkg.jpg);
+	line-height:26px;
+	font-weight:bold;
+	width:920px;
+	padding:0px;
+	border:0px;
+	text-indent:50px;
+	vertical-align:bottom;
+}
+
+#reply_bdy	{
+	background:url(img/post_bdy_bkg.jpg);
+	height:8px;
+	width:920px;
+	padding:0px;
+	border:0px;
+	text-indent:50px;
+}
+
+#reply_ftr	{
+	background:url(img/post_ftr_bkg.jpg);
+	line-height:35px;
+	width:920px;
+	padding:0px;
+	border:0px;
+	text-indent:50px;
+	color: #999;
+}
+
+
 /*Header Navigation Link Styles*/
 
 a.hdr_nav:link, a.hdr_nav:active, a.hdr_nav:visited {
@@ -143,6 +173,25 @@ a.hdr_nav:link, a.hdr_nav:active, a.hdr_nav:visited {
 a.hdr_nav:hover {
 	font-size: 12px;
 	color: #CCCCCC;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/*Text Only Styles*/
+.text_area	{
+    width: 820px;
+	margin-top:20px;
+	margin-bottom:20px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+
+/*Headings*/
+h1 {
+	font-size: 24px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
 	text-decoration: none;
 	font-weight: bold;
 }

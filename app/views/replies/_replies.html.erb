@@ -1,0 +1,11 @@
+<tr>
+    <td id="reply_bdy">
+    <%= embed(reply.audio_url) %>
+    </td>
+</tr>
+<tr>
+    <td id="reply_ftr">
+    Posted by <%= reply.user.username %> at <span class="timestamp"><%= reply.created_at %> </span>
+    </td>
+</tr>
+

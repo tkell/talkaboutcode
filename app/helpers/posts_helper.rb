@@ -20,15 +20,16 @@ module PostsHelper
         if r.bytesize > 2
             oembed_results = JSON.parse(r) 
             oembed_html = oembed_results["html"][0..-148] # 100% jank to remove the soundcloud link.  Will get weird if SC change their oEmbed response
+            oembed_html = oembed_html.gsub('width="100%"', 'width="820px"')
             oembed_html.html_safe
         else
-          error_html = '<object height="81" width="100%"><span id="html_error">Your audio has not been processed by SoundCloud yet!
+          error_html = '<object height="81" width="820px"><span id="html_error">Your audio has not been processed by SoundCloud yet!
                         Please wait a moment, then refresh the page.  </span></object>'
           error_html.html_safe   
         end
     end
 
-    # Given that none of these work, I'd rather use the above embed call
+    # Deprecated, can be removed.
     def resolve(url)
       #http://api.soundcloud.com/resolve.json?url=http://soundcloud.com/matas/hobnotropic&client_id=YOUR_CLIENT_ID'
       sc_url = "http://api.soundcloud.com/resolve.json?"
@@ -37,7 +38,6 @@ module PostsHelper
     
       r = Net::HTTP.get_response(URI.parse("http://djfractal.net"))
       r.body
-      
     end
 
 end
