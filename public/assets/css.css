@@ -162,18 +162,21 @@ body  {
 
 /*Header Navigation Link Styles*/
 
+a {
+	text-decoration: none;
+}
+
+
 a.hdr_nav:link, a.hdr_nav:active, a.hdr_nav:visited {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	color: #FFFFFF;
-	text-decoration: none;
 	font-weight: bold;
 	text-align:right;
 }
 a.hdr_nav:hover {
 	font-size: 12px;
 	color: #CCCCCC;
-	text-decoration: none;
 	font-weight: bold;
 }
 
@@ -185,7 +188,10 @@ a.hdr_nav:hover {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	color: #000000;
-	text-decoration: none;
+}
+
+#sc_url	{
+	display:none;
 }
 
 /*Headings*/
@@ -195,3 +201,54 @@ h1 {
 	text-decoration: none;
 	font-weight: bold;
 }
+
+/*SoundCloud Recorder Styles*/
+
+#recorderUI {
+  width: 182px;
+}
+
+
+#recorderUI #timer {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 85%;
+  padding-left:30px;
+  color: #333;
+  line-height: 85px;
+  width: 100%;
+  display: none;
+}
+
+#recorderUI.recording #timer, #recorderUI.playing #timer {
+  display: block;
+  text-decoration: none;
+}
+
+#recorderUI #otherControls {
+  display: none;
+  padding-left:40px;
+  text-decoration: none;
+}
+
+#recorderUI.playing #otherControls, #recorderUI.recorded #otherControls {
+  display: block;
+}
+
+#reset, #upload {
+  width: 50px;
+  margin: 5px;
+}
+
+#otherControls {
+  clear: both;
+}
+
+#controlButton { margin: auto !important; padding: 0 !important; border: 0 !important; -moz-border-radius: 0; -webkit-border-radius: 0; -o-border-radius: 0; -ms-border-radius: 0; border-radius: 0; -webkit-transition: none; -moz-transition: none; -o-transition: none; transition: none; display: block; width: 84px; height: 84px; background-color: transparent !important; background-image: url(rec_button_large.png) !important; background-position: 0 0; }
+
+#recorderUI.recording #controlButton, #recorderUI.playing #controlButton {
+  background-position: 0 -84px;
+}
+#recorderUI.recorded #controlButton { background-position: 0 -168px; }
+#controlButton.pause { background-position: 0 -252px; }
+
