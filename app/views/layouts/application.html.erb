@@ -1,38 +1,81 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Talkaboutcode</title>
-  <%= stylesheet_link_tag    "application" %>
-  <!-- <%= javascript_include_tag "application" %> -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-  <script src="/assets/sdk.js" type="text/Javascript"></script>  
+<link rel="stylesheet" type="text/css" href="/assets/css.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script src="/assets/sdk.js" type="text/Javascript"></script>  
 
+<!-- <%= stylesheet_link_tag    "application" %> -->
+<!-- <%= javascript_include_tag "application" %> -->
+<%= csrf_meta_tags %>
 
-  <%= csrf_meta_tags %>
+<!-- TemplateBeginEditable name="title" -->
+<title>talkaboutco.de</title>
+<!-- TemplateEndEditable -->
 </head>
 <body>
+<center>
+<table cellspacing="0" id="main_table">
+	<tr>
+    	<td rowspan="2" id="main_hdr">
+       		<div class="logo_area">
+       		</div>
+      </td>
+    	<td id="main_site_nav">
+        	<div class="site_nav">
+            	<%= link_to "Home", '/', :class => "hdr_nav" %>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <% if signed_in? %>
+                    <%= link_to "New Post", '/posts/new', :class => "hdr_nav"%>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <% end %>
+                <%= link_to "View Posts", '/posts', :class => "hdr_nav" %>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <%= link_to "About", '/about', :class => "hdr_nav" %>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <%= link_to "Contact", '/contact', :class => "hdr_nav" %>
+            </div>
+        </td>     
+    </tr>
+	<tr>
+	     <td id="main_usr_nav"> 
+         	<div class="user_nav">
+            	<% if signed_in? %>
+                    <%= link_to "You", current_user, :class => "hdr_nav"%>
+                    <%= link_to "Sign out", signout_path, :class => "hdr_nav"%>
+                <% else %>
+                    <%= link_to "Sign in", signin_path, :class => "hdr_nav" %>
+                    <%= link_to "Sign up", signup_path, :class => "hdr_nav" %>
+                <% end %>
+            </div>
+         </td>
+    </tr>
+    <tr>
+	     <td id="main_usr_nav">
+         	<div class="user_nav">
+                <%= form_tag("/tags", :method => "get") do %>
+                <%= label_tag(:tag, "Search by tag:") %>
+                <%= text_field_tag(:tag) %>
+                <%= submit_tag("Go!") %>
+                <% end %>
+            </div>
+         </td>
+    </tr>
 
-<% if signed_in? %>
-<%= link_to "You", current_user %>
-<%= link_to "Sign out", signout_path %>
-<%= link_to "New Post", '/posts/new' %>
-<% else %>
-<%= link_to "Sign in", signin_path %>
-<%= link_to "Sign up", signup_path %>
-<% end %>
-
-<%= link_to "View Posts", '/posts' %>
-
-<%= link_to "About", '/about' %>
-<%= link_to "Contact", '/contact' %>
-
-<%= form_tag("/tags", :method => "get") do %>
-  <%= label_tag(:tag, "Search by tag:") %>
-  <%= text_field_tag(:tag) %>
-  <%= submit_tag("Go!") %>
-<% end %>
-
-<%= yield %>
-
+    <tr>
+       	<td colspan="2" id="main_bdy">
+       		<%= yield %>
+        </td>
+    </tr>
+    <tr>
+    	<td colspan="2" id="main_ftr">
+        <div class="ftr_info">
+            By Toby, Omar, Jason and Thor, for CSC 485 / SENG 435, Fall 2011.  
+        </div>  
+        </td>
+    </tr>
+  </table>
+  </center>
 </body>
 </html>

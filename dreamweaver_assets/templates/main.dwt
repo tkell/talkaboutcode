@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="../css.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- TemplateBeginEditable name="title" -->
+<title>talkaboutco.de</title>
+<!-- TemplateEndEditable -->
+</head>
+
+<body>
+<center>
+<table cellspacing="0" id="main_table">
+	<tr>
+    	<td rowspan="2" id="main_hdr">
+       		<div class="logo_area">
+       		</div>
+      </td>
+    	<td id="main_site_nav">
+        	<div class="site_nav">
+            	<a href="index.html" class="hdr_nav">Home</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="about.html" class="hdr_nav">About</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="contact.html" class="hdr_nav">Contact</a>
+            </div>
+        </td>        
+    </tr>
+	<tr>
+	     <td id="main_usr_nav">
+         	<div class="user_nav">
+            	<a href="login.html" class="hdr_nav">Login</a>
+            </div>
+         </td>
+    </tr>
+    <tr>
+       	<td colspan="2" id="main_bdy">
+       		<!-- TemplateBeginEditable name="body" -->
+			<!-- TemplateEndEditable -->
+        </td>
+    </tr>
+    <tr>
+    	<td colspan="2" id="main_ftr">
+        <div class="ftr_info">
+        	© Thor, Toby, Jason, and Omar (edit me!)
+        </div>  
+        </td>
+    </tr>
+  </table>
+  </center>
+</body>
+</html>

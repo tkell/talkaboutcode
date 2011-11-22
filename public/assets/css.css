@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+
+body  {
+	background-color: #22407e;
+}
+
+/* If you change the dimensions of the table background images, you must update the dimensions in the corresponding id*/
+
+/*MAIN TABLE PROPERTIES*/
+
+#main_table	{
+	width:1200px;
+}
+
+#main_hdr	{
+	background:url(img/site_hdr_bkg.jpg);
+	height:68px;
+	width:600px;
+	padding:0px;
+	border:0px;
+	text-align:left;
+}
+
+#main_site_nav	{
+	background:url(img/site_nav_bkg.jpg);
+	height:36px;
+	width:600px;
+	padding:0px;
+	border:0px;
+	text-align:right;
+}
+
+#main_usr_nav	{
+	background:url(img/usr_nav_bkg.jpg);
+	width:600px;
+	height:32px;
+	padding:0px;
+	border:0px;
+	text-align:right;
+}
+
+#main_bdy	{
+	background:url(img/site_bdy_bkg.jpg);
+	background-repeat:repeat-y;
+	width:1200px;
+	padding:0px;
+	border:0px;
+	text-indent:150px
+}
+
+#main_ftr	{
+	background:url(img/site_ftr_bkg.jpg);
+	height:66px;
+	width:1200px;
+	padding:0px;
+	border:0px;
+	text-align:center;
+}
+
+.logo_area	{
+	width:600px;
+	height:68px;
+	table-layout:fixed;
+	resize:none;
+}
+
+.site_nav	{
+	margin-right:50px;
+	margin-top:10px;
+	resize:none;
+}
+
+.user_nav	{
+	margin-right:50px;
+	margin-top:5px;
+	resize:none;
+}
+
+.ftr_info	{
+	color:#CCC;
+	margin-bottom:10px;
+}
+
+/*POST BOX PROPERTIES*/
+
+.post_area	{
+	margin-left:125px;
+	margin-top:20px;
+	margin-bottom:20px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+
+#post_hdr	{
+	background:url(img/post_hdr_bkg.jpg);
+	line-height:26px;
+	font-weight:bold;
+	width:920px;
+	padding:0px;
+	border:0px;
+	text-indent:50px;
+	vertical-align:bottom;
+}
+
+#post_bdy	{
+	background:url(img/post_bdy_bkg.jpg);
+	height:8px;
+	width:920px;
+	padding:0px;
+	border:0px;
+	text-indent:50px;
+}
+
+#post_ftr	{
+	background:url(img/post_ftr_bkg.jpg);
+	line-height:35px;
+	width:920px;
+	padding:0px;
+	border:0px;
+	text-indent:50px;
+	color: #999;
+}
+
+/*Header Navigation Link Styles*/
+
+a.hdr_nav:link, a.hdr_nav:active, a.hdr_nav:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: bold;
+	text-align:right;
+}
+a.hdr_nav:hover {
+	font-size: 12px;
+	color: #CCCCCC;
+	text-decoration: none;
+	font-weight: bold;
+}

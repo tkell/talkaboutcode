@@ -1,19 +1,19 @@
 How to test Talkaboutcode:  
 
-ALL PASSING as of 11/11/11.  
+ALL PASSING as of 11/16/11.  
 
-- Sign up as a new user with :username
-- Go to /me, see your user page
-- Sign out.  
-- Sign in as :username
-- Create a new post at /posts/new, with a :tag
-- Record audio.  Reset the audio. Record it again, and upload it, then submit the post.  
-- View the post.  
-- Reply to the post with recorded soundcloud audio.
-- View the post and its reply. 
-- Go to /, see the most current posts
-- Search for the post by :tag (and find it!)
-- View your user at /:username, including the post and the reply link
-- View all posts at /posts
+	- Sign up as a new user with :username
+	- Go to /me, see your user page
+	- Sign out.  
+	- Sign in as :username
+	- Create a new post at /posts/new, with a :tag
+	- Record audio.  Reset the audio. Record it again, and upload it, then submit the post.  
+	- View the post.  
+	- Reply to the post with recorded soundcloud audio.
+	- View the post and its reply. 
+	- Go to /, see the most current posts
+	- Search for the post by :tag (and find it!)
+	- View your user at /:username, including the post and the reply link
+	- View all posts at /posts
 
 
