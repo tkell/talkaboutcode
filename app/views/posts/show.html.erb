@@ -1,21 +1,4 @@
-<p id="notice"><%= notice %></p>
-<p>
-<table class="posts" summary="User posts">
-     <%= render @post %>
-</table>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @post.user.username %>
-</p>
-
-<p>
-  <b>Tags:</b>
-    <% @post.tags.each do |tag| %>
-      <%= link_to tag, "/tags/#{tag}" %>
-    <% end %>
-</p>
+<%= render @post %>
 
 <p>
   <b>Replies:</b>

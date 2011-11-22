@@ -124,6 +124,12 @@ body  {
 	color: #999;
 }
 
+#post_code	{
+	width: 250px
+    height: 250px; 
+    padding:0px;
+}
+
 /*Header Navigation Link Styles*/
 
 a.hdr_nav:link, a.hdr_nav:active, a.hdr_nav:visited {

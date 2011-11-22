@@ -1,9 +1,31 @@
+<div class="post_area">
+
+<table cellspacing="0" id="post">
 <tr>
-<td class="post">
-    <strong> <span class="title"><%= post.title %> </span> </strong>
-    <span class="timestamp"><%= post.created_at %> </span>
-    <br />
-    Code:  <div class="codebox" style="width: 250px; height: 250px; border: 1px solid;"><span class="code"><%= post.code_snippet %> </span></div>
-    <span class="audio"><%= embed(post.audio_url) %> </span>
-</td>
+    <td id="post_hdr">
+    <strong> <span class="title"><%= post.title %> </span> </strong>   
+    </td>
 </tr>
+
+<tr>
+    <td id="post_bdy">
+    <span class="audio"><%= embed(post.audio_url) %> </span>
+    <p>
+    Code:  <div id="post_code" ><span class="code"><%= post.code_snippet %> </span></div>
+    </p>   
+    <p>
+    <b>Tags:</b>
+    <% @post.tags.each do |tag| %>
+      <%= link_to tag, "/tags/#{tag}" %>
+    <% end %>
+    </p>
+    </td>
+</tr>
+<tr>
+    <td id="post_ftr">
+    Posted by <%= post.user.username %> at <span class="timestamp"><%= post.created_at %> </span>
+    </td>
+</tr>
+</table>
+
+</div>

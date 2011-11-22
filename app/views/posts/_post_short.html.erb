@@ -1,7 +1,9 @@
 <tr>
 <td class="post">
+
     <span class="title"><%= link_to post.title, post %> </span>
     <span class="timestamp"><%= post.created_at %> </span>
     <span class="audio"><%= embed(post.audio_url) %> </span>
+
 </td>
 </tr>
