@@ -57125,3 +57125,387 @@ Rendered replies/_replies.html.erb (871.4ms)
 Rendered posts/_record.html.erb (0.2ms)
 Rendered posts/show.html.erb within layouts/application (1778.7ms)
 Completed 200 OK in 1825ms (Views: 1816.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/signout" for 127.0.0.1 at Mon Nov 21 22:39:23 -0800 2011
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at Mon Nov 21 22:39:23 -0800 2011
+  Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC, created_at DESC LIMIT 3
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered posts/_post_short.html.erb (2042.7ms)
+Rendered home/index.html.erb within layouts/application (2241.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 2292ms (Views: 2288.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/signin" for 127.0.0.1 at Mon Nov 21 22:39:32 -0800 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (13.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 90ms (Views: 88.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/signup" for 127.0.0.1 at Mon Nov 21 22:39:33 -0800 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (18.2ms)
+Rendered users/new.html.erb within layouts/application (19.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 64ms (Views: 62.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at Mon Nov 21 22:39:42 -0800 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"fATdB/Bj7mLyiwjDOIxm6O8Lvx6/mWCvvVA0XoYn9ts=", "utf8"=>"✓", "user"=>{"username"=>"Thor3", "password"=>"[FILTERED]", "email"=>"thor3@thor.com"}}
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."username" = 'Thor3' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "users" WHERE "users"."email" = 'thor3@thor.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "password", "post_count", "salt", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 22 Nov 2011 06:39:42 UTC +00:00], ["email", "thor3@thor.com"], ["encrypted_password", "c41b8610e47d0dfef6bf36016b0825890c39257733529741690761866cb98cdb"], ["password", "testword"], ["post_count", 0], ["salt", "c44c01af5d720ae1c98b47f85b484ed014fa710dceb53e607d2a2abf4ad2bf6e"], ["updated_at", Tue, 22 Nov 2011 06:39:42 UTC +00:00], ["username", "Thor3"]]
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 33ms
+
+
+Started GET "/users/3" for 127.0.0.1 at Mon Nov 21 22:39:42 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "3"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 3
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "replies" WHERE "replies"."user_id" = 3[0m
+Rendered users/show.html.erb within layouts/application (88.8ms)
+Completed 200 OK in 136ms (Views: 128.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/me" for 127.0.0.1 at Mon Nov 21 22:39:55 -0800 2011
+  Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 3[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "replies" WHERE "replies"."user_id" = 3
+Rendered users/show.html.erb within layouts/application (63.5ms)
+Completed 200 OK in 255ms (Views: 236.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/signout" for 127.0.0.1 at Mon Nov 21 22:40:03 -0800 2011
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at Mon Nov 21 22:40:03 -0800 2011
+  Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC, created_at DESC LIMIT 3[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered posts/_post_short.html.erb (2067.9ms)
+Rendered home/index.html.erb within layouts/application (2251.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 2291ms (Views: 2286.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/signin" for 127.0.0.1 at Mon Nov 21 22:40:07 -0800 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (3.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 244ms (Views: 241.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at Mon Nov 21 22:40:18 -0800 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"Sign in", "session"=>{"username"=>"Thor3", "password"=>"[FILTERED]"}, "authenticity_token"=>"fATdB/Bj7mLyiwjDOIxm6O8Lvx6/mWCvvVA0XoYn9ts=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'Thor3' LIMIT 1
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 49ms
+
+
+Started GET "/users/3" for 127.0.0.1 at Mon Nov 21 22:40:18 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 3[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "replies" WHERE "replies"."user_id" = 3
+Rendered users/show.html.erb within layouts/application (74.6ms)
+Completed 200 OK in 115ms (Views: 108.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Mon Nov 21 22:40:27 -0800 2011
+  Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered posts/_record.html.erb (10.2ms)
+Rendered posts/new.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 154ms (Views: 70.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/posts" for 127.0.0.1 at Mon Nov 21 22:41:12 -0800 2011
+  Processing by PostsController#create as HTML
+  Parameters: {"commit"=>"Create Post", "post"=>{"title"=>"The Fifth Test Post, I think", "code_snippet"=>"puts \"Sun, sun, sun, sun, sun, sun\"", "tags"=>"ruby, caribou, testing"}, "authenticity_token"=>"fATdB/Bj7mLyiwjDOIxm6O8Lvx6/mWCvvVA0XoYn9ts=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+WARNING: Can't mass-assign protected attributes: tags
+  [1m[36mSQL (5.7ms)[0m  [1mINSERT INTO "posts" ("audio_url", "code_snippet", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["audio_url", "http://soundcloud.com/talkaboutcode/thor3-0"], ["code_snippet", "puts \"Sun, sun, sun, sun, sun, sun\""], ["created_at", Tue, 22 Nov 2011 06:41:12 UTC +00:00], ["title", "The Fifth Test Post, I think"], ["updated_at", Tue, 22 Nov 2011 06:41:12 UTC +00:00], ["user_id", 3]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE (name LIKE 'ruby' OR name LIKE 'caribou' OR name LIKE 'testing')
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "tags" WHERE "tags"."name" = 'caribou' LIMIT 1[0m
+  [1m[35mSQL (3.9ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "caribou"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "tags" WHERE "tags"."name" = 'testing' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "testing"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 8 AND "taggings"."taggable_type" = 'Post' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.2ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 8 AND "taggings"."taggable_type" = 'Post' AND "taggings"."context" = 'tags' AND "taggings"."tagger_type" IS NULL AND "taggings"."tagger_id" IS NULL AND "taggings"."tag_id" IN (NULL)
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "taggings" WHERE ("taggings"."tag_id" = 1 AND "taggings"."taggable_type" = 'Post' AND "taggings"."taggable_id" = 8 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)  [["context", "tags"], ["created_at", Tue, 22 Nov 2011 06:41:12 UTC +00:00], ["tag_id", 1], ["taggable_id", 8], ["taggable_type", "Post"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "taggings" WHERE ("taggings"."tag_id" = 14 AND "taggings"."taggable_type" = 'Post' AND "taggings"."taggable_id" = 8 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)  [["context", "tags"], ["created_at", Tue, 22 Nov 2011 06:41:12 UTC +00:00], ["tag_id", 14], ["taggable_id", 8], ["taggable_type", "Post"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "taggings" WHERE ("taggings"."tag_id" = 15 AND "taggings"."taggable_type" = 'Post' AND "taggings"."taggable_id" = 8 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)  [["context", "tags"], ["created_at", Tue, 22 Nov 2011 06:41:12 UTC +00:00], ["tag_id", 15], ["taggable_id", 8], ["taggable_type", "Post"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."username" = 'Thor3' AND "users"."id" != 3) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "users" WHERE ("users"."email" = 'thor3@thor.com' AND "users"."id" != 3) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "users" SET "updated_at" = '2011-11-22 06:41:12.767714', "post_count" = 1 WHERE "users"."id" = 3[0m
+Redirected to http://localhost:3000/posts/8
+Completed 302 Found in 284ms
+
+
+Started GET "/posts/8" for 127.0.0.1 at Mon Nov 21 22:41:12 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "8"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 8 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered posts/_post.html.erb (913.4ms)
+  [1m[35mReply Load (0.3ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 8 ORDER BY replies.created_at ASC
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (954.1ms)
+Completed 200 OK in 996ms (Views: 987.5ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/posts/8/replies" for 127.0.0.1 at Mon Nov 21 22:42:09 -0800 2011
+  Processing by RepliesController#create as HTML
+  Parameters: {"commit"=>"Post Reply", "authenticity_token"=>"fATdB/Bj7mLyiwjDOIxm6O8Lvx6/mWCvvVA0XoYn9ts=", "utf8"=>"✓", "post_id"=>"8"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1[0m  [["id", "8"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "replies" ("audio_url", "created_at", "post_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["audio_url", "http://soundcloud.com/talkaboutcode/thor3-1"], ["created_at", Tue, 22 Nov 2011 06:42:09 UTC +00:00], ["post_id", 8], ["updated_at", Tue, 22 Nov 2011 06:42:09 UTC +00:00], ["user_id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."username" = 'Thor3' AND "users"."id" != 3) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'thor3@thor.com' AND "users"."id" != 3) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  UPDATE "users" SET "post_count" = 2, "updated_at" = '2011-11-22 06:42:09.552022' WHERE "users"."id" = 3
+Redirected to http://localhost:3000/posts/8
+Completed 302 Found in 336ms
+
+
+Started GET "/posts/8" for 127.0.0.1 at Mon Nov 21 22:42:09 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1[0m  [["id", "8"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 8 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_post.html.erb (692.1ms)
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 8 ORDER BY replies.created_at ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered replies/_replies.html.erb (790.6ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (1638.4ms)
+Completed 200 OK in 1686ms (Views: 1675.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/posts/8" for 127.0.0.1 at Mon Nov 21 22:42:17 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1[0m  [["id", "8"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 8 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_post.html.erb (1177.2ms)
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 8 ORDER BY replies.created_at ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered replies/_replies.html.erb (1425.0ms)
+Rendered posts/_record.html.erb (0.3ms)
+Rendered posts/show.html.erb within layouts/application (2636.0ms)
+Completed 200 OK in 2808ms (Views: 2797.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Nov 21 22:42:42 -0800 2011
+  Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC, created_at DESC LIMIT 3[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered posts/_post_short.html.erb (2263.1ms)
+Rendered home/index.html.erb within layouts/application (2321.9ms)
+Completed 200 OK in 2366ms (Views: 2362.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tags?utf8=%E2%9C%93&tag=testing&commit=Go%21" for 127.0.0.1 at Mon Nov 21 22:42:53 -0800 2011
+  Processing by PostsController#index as HTML
+  Parameters: {"commit"=>"Go!", "tag"=>"testing", "utf8"=>"✓"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 8 AND "taggings"."taggable_type" = 'Post' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Post' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'Post' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'Post' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered posts/_post_short.html.erb (3198.7ms)
+Rendered posts/index.html.erb within layouts/application (3201.6ms)
+Completed 200 OK in 3297ms (Views: 3237.5ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/posts/8" for 127.0.0.1 at Mon Nov 21 22:43:00 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "8"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 8 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered posts/_post.html.erb (750.5ms)
+  [1m[35mReply Load (0.3ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 8 ORDER BY replies.created_at ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered replies/_replies.html.erb (862.9ms)
+Rendered posts/_record.html.erb (0.4ms)
+Rendered posts/show.html.erb within layouts/application (1649.4ms)
+Completed 200 OK in 1689ms (Views: 1682.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/Thor3" for 127.0.0.1 at Mon Nov 21 22:43:10 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"username"=>"Thor3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'Thor3' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 3
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 3 ORDER BY posts.created_at DESC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_post_short.html.erb (968.5ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "replies" WHERE "replies"."user_id" = 3[0m
+  [1m[35mReply Load (0.3ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."user_id" = 3 ORDER BY replies.created_at ASC
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 8 ORDER BY posts.created_at DESC LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (1078.3ms)
+Completed 200 OK in 1120ms (Views: 1110.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at Mon Nov 21 22:43:21 -0800 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered posts/_post_short.html.erb (3614.9ms)
+Rendered posts/index.html.erb within layouts/application (3616.4ms)
+Completed 200 OK in 3664ms (Views: 3656.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at Mon Nov 21 22:43:50 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 3[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 3 ORDER BY posts.created_at DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered posts/_post_short.html.erb (751.1ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "replies" WHERE "replies"."user_id" = 3
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."user_id" = 3 ORDER BY replies.created_at ASC[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = 8 ORDER BY posts.created_at DESC LIMIT 1
+Rendered users/show.html.erb within layouts/application (1036.9ms)
+Completed 200 OK in 1101ms (Views: 1093.8ms | ActiveRecord: 3.8ms)
+
+
+Started DELETE "/posts/8" for 127.0.0.1 at Mon Nov 21 22:43:53 -0800 2011
+  Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fATdB/Bj7mLyiwjDOIxm6O8Lvx6/mWCvvVA0XoYn9ts=", "id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "8"]]
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 8 ORDER BY replies.created_at ASC[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "replies" WHERE "replies"."id" = ?  [["id", 12]]
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 8 AND "taggings"."taggable_type" = 'Post'[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."id" IN (1, 14, 15)
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "taggings" WHERE "taggings"."id" = ?[0m  [["id", 16]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "taggings" WHERE "taggings"."id" = ?  [["id", 17]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "taggings" WHERE "taggings"."id" = ?[0m  [["id", 18]]
+  [1m[35mSQL (0.3ms)[0m  SELECT "taggings"."id" AS t0_r0, "taggings"."tag_id" AS t0_r1, "taggings"."taggable_id" AS t0_r2, "taggings"."taggable_type" AS t0_r3, "taggings"."tagger_id" AS t0_r4, "taggings"."tagger_type" AS t0_r5, "taggings"."context" AS t0_r6, "taggings"."created_at" AS t0_r7, "tags"."id" AS t1_r0, "tags"."name" AS t1_r1 FROM "taggings" LEFT OUTER JOIN "tags" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 8 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 8]]
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 97ms
+
+
+Started GET "/posts" for 127.0.0.1 at Mon Nov 21 22:43:54 -0800 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered posts/_post_short.html.erb (2728.6ms)
+Rendered posts/index.html.erb within layouts/application (2730.2ms)
+Completed 200 OK in 2772ms (Views: 2767.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/ME" for 127.0.0.1 at Mon Nov 21 22:44:00 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"username"=>"ME"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'ME' LIMIT 1
+Completed 500 Internal Server Error in 5ms
+
+NoMethodError (undefined method `posts' for nil:NilClass):
+  app/controllers/users_controller.rb:28:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.9ms)
+
+
+Started GET "/me" for 127.0.0.1 at Mon Nov 21 22:44:04 -0800 2011
+  Processing by UsersController#show as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = 3
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "replies" WHERE "replies"."user_id" = 3[0m
+Rendered users/show.html.erb within layouts/application (221.8ms)
+Completed 200 OK in 283ms (Views: 255.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/WOMBATY" for 127.0.0.1 at Mon Nov 21 22:44:11 -0800 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"username"=>"WOMBATY"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'WOMBATY' LIMIT 1
+Completed 500 Internal Server Error in 4ms
+
+NoMethodError (undefined method `posts' for nil:NilClass):
+  app/controllers/users_controller.rb:28:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (143.2ms)
+
+
+Started GET "/contact" for 127.0.0.1 at Mon Nov 21 22:44:16 -0800 2011
+  Processing by HomeController#contact as HTML
+Rendered home/contact.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 89ms (Views: 86.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/about" for 127.0.0.1 at Mon Nov 21 22:44:18 -0800 2011
+  Processing by HomeController#about as HTML
+Rendered home/about.html.erb within layouts/application (14.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 232ms (Views: 229.9ms | ActiveRecord: 1.4ms)
