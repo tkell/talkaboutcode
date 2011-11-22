@@ -1,5 +1,4 @@
-<p id="notice"><%= notice %></p>
-
+<div class="text_area">
 <p>
   <b>Username:</b>
   <%= @user.username %>
@@ -10,24 +9,35 @@
   <%= @user.email %>
 </p>
 
-<p>
+<% unless @user != current_user %>
+    <p>
+    <%= link_to 'Edit your profile', edit_user_path(@user) %>
+    </p>
+<% end %>
+
+
 <% unless @user.posts.empty? %>
-   <b>Your Posts:</b>
+   <% unless @user != current_user %>
+    <b>Your Posts:</b>
+   <% else %>
+    <b>Posts by <%= @user.username %>:</b>
+   <% end %>
     <table class="posts" summary="User posts">
          <%= render :partial => "/posts/post_short", :collection => @posts, :as => :post%>
     </table>
 <% end %>
-</p>
+
 
 <p>
 <% unless @user.replies.empty? %>
+   <% unless @user != current_user %>
     <b>Posts You've Replied To:</b> 
+   <% else %>
+    <b>Posts Replied to by <%= @user.username %>:</b>
+   <% end %>
     <%= render :partial => "/replies/replies_short", :collection => @replies, :as => :reply%>
     <%= link_to @user.replies[0].post.title, @user.replies[0].post %>
 <% end %>
 </p>
 
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+</div>
