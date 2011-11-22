@@ -84,7 +84,7 @@ SC.initialize({
         }
       }, function(track){
         document.getElementsByName('commit')[1].disabled = false;
-        $("#uploadStatus").html("Uploaded: <a href='" + track.permalink_url + "'>" + track.permalink_url + "</a>");
+        $("#uploadStatus").html("Uploaded successfully!");
       });
     }
 

@@ -19,12 +19,12 @@ module PostsHelper
         r = Net::HTTP.get(URI.parse(url))
         if r.bytesize > 2
             oembed_results = JSON.parse(r) 
-            oembed_html = oembed_results["html"][0..-148] # 100% jank to remove the soundcloud link.  Will get weird if SC change their oEmbed response
+            oembed_html = oembed_results["html"][0..-150] # 100% jank to remove the soundcloud link.  Will get weird if SC change their oEmbed response
             oembed_html = oembed_html.gsub('width="100%"', 'width="820px"')
             oembed_html.html_safe
         else
-          error_html = '<object height="81" width="820px"><span id="html_error">Your audio has not been processed by SoundCloud yet!
-                        Please wait a moment, then refresh the page.  </span></object>'
+          error_html = '<span id="sc_html_error">Your audio has not been processed by SoundCloud yet!
+                        Please wait a moment, then <a href=''>refresh the page.</a></span>'
           error_html.html_safe   
         end
     end

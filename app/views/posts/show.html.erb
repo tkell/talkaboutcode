@@ -11,9 +11,10 @@
 </table>
 </div>
 
+<div class="text_area">
 <% if signed_in? %>
     <p>
-      <b>Post Reply:</b>
+      <b>Post Reply:</b> <i><small>(press record, and talk about their code!)</i></small>
       <%= form_for [@post, @post.replies.build] do |f| %>
       <%= render 'record' %>
       <div class="actions">
@@ -24,6 +25,7 @@
 <% else %>
     <%= link_to "Sign in to post a reply", signin_path %>
 <% end %>
+</div>
 
 <script>
 document.getElementsByName('commit')[1].disabled = true;

@@ -164,6 +164,7 @@ body  {
 
 a {
 	text-decoration: none;
+    color: #22407e;
 }
 
 
@@ -187,7 +188,7 @@ a.hdr_nav:hover {
 	margin-bottom:20px;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 12px;
-	color: #000000;
+	color: #000000; 
 }
 
 #sc_url	{
@@ -202,10 +203,17 @@ h1 {
 	font-weight: bold;
 }
 
+#sc_html_error {
+  width: 620px;
+  color: #EE4000;
+  font-weight: bold;
+}
+
 /*SoundCloud Recorder Styles*/
 
 #recorderUI {
   width: 182px;
+  margin-left: -50px;
 }
 
 
@@ -242,6 +250,10 @@ h1 {
 
 #otherControls {
   clear: both;
+}
+
+#uploadStatus {
+  padding-left:60   px;
 }
 
 #controlButton { margin: auto !important; padding: 0 !important; border: 0 !important; -moz-border-radius: 0; -webkit-border-radius: 0; -o-border-radius: 0; -ms-border-radius: 0; border-radius: 0; -webkit-transition: none; -moz-transition: none; -o-transition: none; transition: none; display: block; width: 84px; height: 84px; background-color: transparent !important; background-image: url(rec_button_large.png) !important; background-position: 0 0; }
