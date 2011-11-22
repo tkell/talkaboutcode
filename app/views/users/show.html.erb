@@ -35,8 +35,16 @@
    <% else %>
     <b>Posts Replied to by <%= @user.username %>:</b>
    <% end %>
-    <%= render :partial => "/replies/replies_short", :collection => @replies, :as => :reply%>
-    <%= link_to @user.replies[0].post.title, @user.replies[0].post %>
+
+   <% unique_replies = [] %>
+   <% for reply in @user.replies do %>
+     <% unique_replies.push(reply.post) unless unique_replies.include?(reply.post)%>
+   <% end%>
+
+   <% for post in unique_replies do %>
+     <span class="reply_link"><%= link_to post.title, post %> </span>
+   <% end%>
+  
 <% end %>
 </p>
 
