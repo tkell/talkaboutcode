@@ -2,6 +2,7 @@ How to test Talkaboutcode:
 
 ALL PASSING LOCALLY as of 11/24/11.  
 
+
 - Sign up as a new user with :username
 - Go to /me, see your user page
 - Sign out.  
