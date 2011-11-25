@@ -13,12 +13,8 @@
     <p>
     <b>Code:</b>
     <form name="codeboxform">
-        <textarea class="code_box" rows="8" cols="60" name="codebox" id="wombat" readonly="readonly"></textarea>
+        <textarea class="code_box" rows="8" cols="60" name="codebox" id="thecodebox" readonly="readonly"><%= raw(post.code_snippet) %></textarea>
     </form>
-    <script language="javascript" type="text/javascript">
-    document.getElementById('wombat').value = "<%= post.code_snippet %>"
-    </script>
-
     </p>
     <p>
     <b>Tags:</b>
