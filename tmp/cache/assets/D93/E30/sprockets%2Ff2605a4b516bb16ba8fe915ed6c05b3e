@@ -313,5 +313,5 @@ window.SC.URI = function(uri, options) {
 };
 "content_type"application/javascript"
 class"BundledAsset"
-mtime"2011-11-11T19:25:23-08:00"_version"%613608b702f8b448c9193f9bfa879da1"id"%ff7a2a4a57f13c76be5ac913027fbee3"dependency_paths[{"hexdigest"%e27545b03b1a1c79756afb6892620e4f"
-mtimeu:	Timeƒé€  pe"	path"($root/app/assets/javascripts/sdk.js"pathname"($root/app/assets/javascripts/sdk.js"logical_path"sdk.js:@compressedF:@created_atf1322202845.923974 "d
+mtime"2011-11-11T19:25:23-08:00"_version"%613608b702f8b448c9193f9bfa879da1"id"%efec5d5c5fe32ed413a76903dfafb8d1"dependency_paths[{"hexdigest"%e27545b03b1a1c79756afb6892620e4f"
+mtimeu:	Timeƒé€  pe"	path"($root/app/assets/javascripts/sdk.js"pathname"($root/app/assets/javascripts/sdk.js"logical_path"sdk.js:@compressedF:@created_atf1322203162.574872 Ê´
