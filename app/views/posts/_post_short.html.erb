@@ -3,18 +3,18 @@
 
 <table cellspacing="0" id="post">
 <tr>
-    <td id="post_hdr">
+    <td class="post_hdr">
     <strong> <span class="title"><span class="title"><%= link_to post.title, post %> </span> </span> </strong>
 
     </td>
 </tr>
 <tr>
-    <td id="post_bdy">
+    <td class="post_bdy">
     <span class="audio"><%= embed(post.audio_url) %> </span>
     </td>
 </tr>
 <tr>
-    <td id="post_ftr">
+    <td class="post_ftr">
     Posted by <%= post.user.username %> at <span class="timestamp"><%= post.created_at %> </span>
     </td>
 </tr>
