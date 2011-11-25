@@ -159,6 +159,18 @@ body  {
 	color: #999;
 }
 
+/*Search box*/
+
+.tag_search	{
+	text-align:right;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight:bold;
+	margin-right:40px;
+	margin-top:5px;
+	margin-bottom:20px;
+}
+
 
 /*Header Navigation Link Styles*/
 

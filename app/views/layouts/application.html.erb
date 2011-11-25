@@ -51,20 +51,16 @@
             </div>
          </td>
     </tr>
+
     <tr>
-	     <td id="main_usr_nav">
-         	<div class="user_nav">
+       	<td colspan="2" id="main_bdy">
+        	<div class="tag_search">
                 <%= form_tag("/tags", :method => "get") do %>
                 <%= label_tag(:tag, "Search by tag:") %>
                 <%= text_field_tag(:tag) %>
                 <%= submit_tag("Go!") %>
                 <% end %>
-            </div>
-         </td>
-    </tr>
-
-    <tr>
-       	<td colspan="2" id="main_bdy">
+        	</div>
        		<%= yield %>
         </td>
     </tr>
