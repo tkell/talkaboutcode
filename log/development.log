@@ -57694,3 +57694,887 @@ Rendered replies/_replies.html.erb (0.0ms)
 Rendered posts/_record.html.erb (0.2ms)
 Rendered posts/show.html.erb within layouts/application (680.9ms)
 Completed 200 OK in 725ms (Views: 715.7ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Nov 24 21:43:00 -0800 2011
+  Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC, created_at DESC LIMIT 3[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered posts/_post_short.html.erb (2238.0ms)
+Rendered home/index.html.erb within layouts/application (2293.7ms)
+Completed 200 OK in 2335ms (Views: 2323.9ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Thu Nov 24 21:43:04 -0800 2011
+  Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 100ms (Views: 44.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at Thu Nov 24 21:44:19 -0800 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered posts/_post_short.html.erb (2087.7ms)
+Rendered posts/index.html.erb within layouts/application (2089.3ms)
+Completed 200 OK in 2139ms (Views: 2133.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:44:22 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1[0m  [["id", "4"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_post.html.erb (743.2ms)
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC[0m
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (781.7ms)
+Completed 200 OK in 832ms (Views: 814.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:45:09 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "4"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered posts/_post.html.erb (544.2ms)
+  [1m[35mReply Load (0.3ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (596.2ms)
+Completed 200 OK in 759ms (Views: 752.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:45:34 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1[0m  [["id", "4"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_post.html.erb (690.7ms)
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC[0m
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (739.1ms)
+Completed 200 OK in 804ms (Views: 796.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:45:56 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "4"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered posts/_post.html.erb (783.0ms)
+  [1m[35mReply Load (0.3ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (943.1ms)
+Completed 200 OK in 987ms (Views: 978.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Thu Nov 24 21:46:03 -0800 2011
+  Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 207ms (Views: 45.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:47:38 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "4"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered posts/_post.html.erb (891.5ms)
+  [1m[35mReply Load (0.2ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (931.7ms)
+Completed 200 OK in 980ms (Views: 961.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:48:33 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1[0m  [["id", "4"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_post.html.erb (606.9ms)
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC[0m
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (652.6ms)
+Completed 200 OK in 688ms (Views: 681.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:48:54 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "4"]]
+Rendered posts/_post.html.erb (570.8ms)
+Rendered posts/show.html.erb within layouts/application (582.4ms)
+Completed 500 Internal Server Error in 603ms
+
+ActionView::Template::Error (undefined method `code_snipp' for #<Post:0x7facfb749a28>):
+    15:         <textarea class="code_box" rows="8" cols="60" name="codebox" readonly="readonly"></textarea>
+    16:     </div>
+    17:     <script language="javascript" type="text/javascript">
+    18:     document.post_code.codebox.value = <%= post.code_snipp %> 
+    19:     </script>
+    20: 
+    21:     </p>
+  app/views/posts/_post.html.erb:18:in `_app_views_posts__post_html_erb___846153357_70190464531400'
+  app/views/posts/show.html.erb:1:in `_app_views_posts_show_html_erb___130408149_70190464953820'
+  app/controllers/posts_controller.rb:35:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.2ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:49:04 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1[0m  [["id", "4"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_post.html.erb (582.7ms)
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC[0m
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (709.0ms)
+Completed 200 OK in 750ms (Views: 740.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:49:37 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "4"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered posts/_post.html.erb (664.1ms)
+  [1m[35mReply Load (0.2ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (700.3ms)
+Completed 200 OK in 753ms (Views: 745.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:50:22 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1[0m  [["id", "4"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_post.html.erb (567.1ms)
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC[0m
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (622.0ms)
+Completed 200 OK in 663ms (Views: 656.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:50:36 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "4"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered posts/_post.html.erb (640.5ms)
+  [1m[35mReply Load (0.3ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (677.7ms)
+Completed 200 OK in 799ms (Views: 791.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:51:28 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1[0m  [["id", "4"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_post.html.erb (824.9ms)
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC[0m
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (886.4ms)
+Completed 200 OK in 929ms (Views: 920.8ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:51:53 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "4"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered posts/_post.html.erb (506.3ms)
+  [1m[35mReply Load (0.2ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (652.5ms)
+Completed 200 OK in 705ms (Views: 697.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:52:18 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1[0m  [["id", "4"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')
+  [1m[36mUser Load (15.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_post.html.erb (715.3ms)
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC[0m
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (785.4ms)
+Completed 200 OK in 943ms (Views: 920.2ms | ActiveRecord: 18.2ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:53:01 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "4"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered posts/_post.html.erb (581.4ms)
+  [1m[35mReply Load (0.3ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (639.7ms)
+Completed 200 OK in 683ms (Views: 676.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:53:29 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1[0m  [["id", "4"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_post.html.erb (515.8ms)
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC[0m
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (637.2ms)
+Completed 200 OK in 678ms (Views: 669.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:53:40 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "4"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered posts/_post.html.erb (523.2ms)
+  [1m[35mReply Load (0.2ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (562.2ms)
+Completed 200 OK in 717ms (Views: 709.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:54:03 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1[0m  [["id", "4"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_post.html.erb (858.6ms)
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC[0m
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (897.0ms)
+Completed 200 OK in 938ms (Views: 929.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:54:17 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "4"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered posts/_post.html.erb (521.5ms)
+  [1m[35mReply Load (0.2ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (659.2ms)
+Completed 200 OK in 710ms (Views: 699.1ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 21:56:51 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1[0m  [["id", "4"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_post.html.erb (581.8ms)
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC[0m
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (735.8ms)
+Completed 200 OK in 771ms (Views: 764.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Thu Nov 24 21:59:00 -0800 2011
+  Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+ERROR: compiling _app_views_posts_new_html_erb___333776713_70190467378980 RAISED compile error
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:20: syntax error, unexpected ':', expecting ')'
+... ( f.text_area :code_snippet :size => "60x60);@output_buffer...
+                              ^
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <div class="field">
+                   ^
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <div class="actions">
+                     ^
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:34: syntax error, unexpected tCONSTANT, expecting ')'
+...fer.append= ( f.submit "Create Post" );@output_buffer.safe_c...
+                              ^
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:34: unterminated string meets end of file
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:34: syntax error, unexpected $end, expecting ')'
+Function body:           def _app_views_posts_new_html_erb___333776713_70190467378980(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "posts/new";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>New post:</h1>
+<div class="text_area">
+');@output_buffer.append=  form_for @post do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+  <b>Title:</b>  <i><small>(what do you want to talk about?)</i></small>
+  <div class="field">
+  ');@output_buffer.append= ( f.text_field :title );@output_buffer.safe_concat(' 
+');@output_buffer.safe_concat('  </div>
+
+  <br />
+
+  <b>Record:</b> <i><small>(press record, and talk about your code.  Don\'t forget to press upload!)</i></small>
+  ');@output_buffer.append= ( render 'record' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+  <br /><br />
+
+  <b>Code:</b> <i><small>(put your code here.)</i></small>
+  <br />
+  <div class="field">
+  ');@output_buffer.append= ( f.text_area :code_snippet :size => "60x60);@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+
+  <br />
+
+  <b>Tags:</b> <i><small>(any number of tags, comma separated, please.)</i></small>
+  <br />
+  <div class="field">
+  ');@output_buffer.append= ( f.text_field :tags );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+
+  <br />
+
+  <div class="actions">
+    ');@output_buffer.append= ( f.submit "Create Post" );@output_buffer.safe_concat(' <i><small>(you have to upload audio before you can make a new post!)</i></small>
+  </div>
+'); end 
+@output_buffer.safe_concat('</div>
+
+<script>
+document.getElementsByName(\'commit\')[1].disabled = true;
+</script>
+');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:34:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/template.rb:190:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/template.rb:143:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/notifications.rb:55:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/template.rb:142:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:40:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/notifications.rb:53:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/notifications.rb:53:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:39:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:47:in `render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:12:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:9:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/renderer.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/abstract_controller/rendering.rb:120:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/streaming.rb:250:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/abstract_controller/rendering.rb:114:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/renderers.rb:30:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/compatibility.rb:43:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/abstract_controller/rendering.rb:99:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/rendering.rb:16:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.1.1/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/mime_responds.rb:268:in `retrieve_response_from_mimes'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/mime_responds.rb:195:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/mime_responds.rb:195:in `respond_to'
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/controllers/posts_controller.rb:45:in `new'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/abstract_controller/base.rb:167:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:425:in `_run__84203013__process_action__943997142__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:386:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:386:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:81:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/notifications.rb:53:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/notifications.rb:53:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/params_wrapper.rb:201:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.1.1/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/abstract_controller/base.rb:121:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/abstract_controller/rendering.rb:45:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal.rb:193:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal.rb:236:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/routing/route_set.rb:65:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/routing/route_set.rb:65:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/routing/route_set.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:152:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:96:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:110:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:95:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:141:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/routing/route_set.rb:532:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/etag.rb:23:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/conditionalget.rb:25:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/flash.rb:243:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/session/abstract/id.rb:195:in `context'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/session/abstract/id.rb:190:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/cookies.rb:331:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.1.1/lib/active_record/query_cache.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.1.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:477:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/callbacks.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:81:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/reloader.rb:68:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/sendfile.rb:101:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.1/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/lock.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/static.rb:53:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.1/lib/rails/engine.rb:456:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.1/lib/rails/rack/content_length.rb:16:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.1/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/handler/webrick.rb:59:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/server.rb:265:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.1/lib/rails/commands/server.rb:70:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.1/lib/rails/commands.rb:54
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.1/lib/rails/commands.rb:49:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.1/lib/rails/commands.rb:49
+script/rails:6:in `require'
+script/rails:6
+Rendered posts/new.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 181ms
+
+ActionView::Template::Error (compile error
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:20: syntax error, unexpected ':', expecting ')'
+... ( f.text_area :code_snippet :size => "60x60);@output_buffer...
+                              ^
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <div class="field">
+                   ^
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <div class="actions">
+                     ^
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:34: syntax error, unexpected tCONSTANT, expecting ')'
+...fer.append= ( f.submit "Create Post" );@output_buffer.safe_c...
+                              ^
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:34: unterminated string meets end of file
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:34: syntax error, unexpected $end, expecting ')'):
+    17:   <b>Code:</b> <i><small>(put your code here.)</i></small>
+    18:   <br />
+    19:   <div class="field">
+    20:   <%= f.text_area :code_snippet :size => "60x60%>
+    21:   </div>
+    22: 
+    23:   <br />
+  app/views/posts/new.html.erb:34:in `compile'
+  app/controllers/posts_controller.rb:45:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.8ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Thu Nov 24 21:59:12 -0800 2011
+  Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+ERROR: compiling _app_views_posts_new_html_erb___333776713_70190465438160 RAISED compile error
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <div class="field">
+                   ^
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <div class="actions">
+                     ^
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:34: syntax error, unexpected tCONSTANT, expecting ')'
+...fer.append= ( f.submit "Create Post" );@output_buffer.safe_c...
+                              ^
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:34: unterminated string meets end of file
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:34: syntax error, unexpected $end, expecting ')'
+Function body:           def _app_views_posts_new_html_erb___333776713_70190465438160(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "posts/new";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>New post:</h1>
+<div class="text_area">
+');@output_buffer.append=  form_for @post do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+  <b>Title:</b>  <i><small>(what do you want to talk about?)</i></small>
+  <div class="field">
+  ');@output_buffer.append= ( f.text_field :title );@output_buffer.safe_concat(' 
+');@output_buffer.safe_concat('  </div>
+
+  <br />
+
+  <b>Record:</b> <i><small>(press record, and talk about your code.  Don\'t forget to press upload!)</i></small>
+  ');@output_buffer.append= ( render 'record' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+  <br /><br />
+
+  <b>Code:</b> <i><small>(put your code here.)</i></small>
+  <br />
+  <div class="field">
+  ');@output_buffer.append= ( f.text_area :code_snippet, :size => "60x60);@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+
+  <br />
+
+  <b>Tags:</b> <i><small>(any number of tags, comma separated, please.)</i></small>
+  <br />
+  <div class="field">
+  ');@output_buffer.append= ( f.text_field :tags );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+
+  <br />
+
+  <div class="actions">
+    ');@output_buffer.append= ( f.submit "Create Post" );@output_buffer.safe_concat(' <i><small>(you have to upload audio before you can make a new post!)</i></small>
+  </div>
+'); end 
+@output_buffer.safe_concat('</div>
+
+<script>
+document.getElementsByName(\'commit\')[1].disabled = true;
+</script>
+');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:34:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/template.rb:190:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/template.rb:143:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/notifications.rb:55:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/template.rb:142:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:40:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/notifications.rb:53:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/notifications.rb:53:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:39:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:47:in `render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:12:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:9:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_view/renderer/renderer.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/abstract_controller/rendering.rb:120:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/streaming.rb:250:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/abstract_controller/rendering.rb:114:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/renderers.rb:30:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/compatibility.rb:43:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/abstract_controller/rendering.rb:99:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/rendering.rb:16:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.1.1/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/mime_responds.rb:268:in `retrieve_response_from_mimes'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/mime_responds.rb:195:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/mime_responds.rb:195:in `respond_to'
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/controllers/posts_controller.rb:45:in `new'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/abstract_controller/base.rb:167:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:425:in `_run__84203013__process_action__943997142__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:386:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:386:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:81:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/notifications.rb:53:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/notifications.rb:53:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/params_wrapper.rb:201:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.1.1/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/abstract_controller/base.rb:121:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/abstract_controller/rendering.rb:45:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal.rb:193:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_controller/metal.rb:236:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/routing/route_set.rb:65:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/routing/route_set.rb:65:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/routing/route_set.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:152:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:96:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:110:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:95:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:141:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/routing/route_set.rb:532:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/etag.rb:23:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/conditionalget.rb:25:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/flash.rb:243:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/session/abstract/id.rb:195:in `context'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/session/abstract/id.rb:190:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/cookies.rb:331:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.1.1/lib/active_record/query_cache.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.1.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:477:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/callbacks.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:81:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/reloader.rb:68:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/sendfile.rb:101:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.1/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.1/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/lock.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/static.rb:53:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.1/lib/rails/engine.rb:456:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.1/lib/rails/rack/content_length.rb:16:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.1/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/handler/webrick.rb:59:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/server.rb:265:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.1/lib/rails/commands/server.rb:70:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.1/lib/rails/commands.rb:54
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.1/lib/rails/commands.rb:49:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.1/lib/rails/commands.rb:49
+script/rails:6:in `require'
+script/rails:6
+Rendered posts/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 170ms
+
+ActionView::Template::Error (compile error
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <div class="field">
+                   ^
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <div class="actions">
+                     ^
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:34: syntax error, unexpected tCONSTANT, expecting ')'
+...fer.append= ( f.submit "Create Post" );@output_buffer.safe_c...
+                              ^
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:34: unterminated string meets end of file
+/home/thor/Dropbox/SENG 435/FinalProject/Code/app/views/posts/new.html.erb:34: syntax error, unexpected $end, expecting ')'):
+    24: 
+    25:   <b>Tags:</b> <i><small>(any number of tags, comma separated, please.)</i></small>
+    26:   <br />
+    27:   <div class="field">
+    28:   <%= f.text_field :tags %>
+    29:   </div>
+    30: 
+  app/views/posts/new.html.erb:34:in `compile'
+  app/controllers/posts_controller.rb:45:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Thu Nov 24 21:59:30 -0800 2011
+  Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 201ms (Views: 42.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at Thu Nov 24 21:59:42 -0800 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered posts/_post_short.html.erb (2181.9ms)
+Rendered posts/index.html.erb within layouts/application (2184.0ms)
+Completed 200 OK in 2234ms (Views: 2226.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 22:00:35 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1[0m  [["id", "4"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_post.html.erb (697.2ms)
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC[0m
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (736.7ms)
+Completed 200 OK in 781ms (Views: 772.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 22:01:23 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1  [["id", "4"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered posts/_post.html.erb (622.0ms)
+  [1m[35mReply Load (0.3ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (668.6ms)
+Completed 200 OK in 719ms (Views: 710.0ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Thu Nov 24 22:01:39 -0800 2011
+  Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/new.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 217ms (Views: 51.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Thu Nov 24 22:01:46 -0800 2011
+  Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 249ms (Views: 53.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 22:02:07 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1[0m  [["id", "4"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_post.html.erb (499.7ms)
+  [1m[36mReply Load (85.6ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC[0m
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (626.7ms)
+Completed 200 OK in 694ms (Views: 589.9ms | ActiveRecord: 88.8ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Thu Nov 24 22:02:23 -0800 2011
+  Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 218ms (Views: 41.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at Thu Nov 24 22:02:28 -0800 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY posts.created_at DESC LIMIT 1[0m  [["id", "4"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Post' AND (taggings.tag_id = tags.id AND taggings.context = 'tags')
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered posts/_post.html.erb (583.1ms)
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC[0m
+Rendered replies/_replies.html.erb (0.0ms)
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/show.html.erb within layouts/application (707.9ms)
+Completed 200 OK in 748ms (Views: 740.9ms | ActiveRecord: 3.5ms)

@@ -11,8 +11,15 @@
     <td class="post_bdy">
     <span class="audio"><%= embed(post.audio_url) %> </span>
     <p>
-    <b>Code:</b>  <div id="post_code" ><span class="code"><%= post.code_snippet %> </span></div>
-    </p>   
+    <b>Code:</b>
+    <form name="codeboxform">
+        <textarea class="code_box" rows="8" cols="60" name="codebox" id="wombat" readonly="readonly"></textarea>
+    </form>
+    <script language="javascript" type="text/javascript">
+    document.getElementById('wombat').value = "<%= post.code_snippet %>"
+    </script>
+
+    </p>
     <p>
     <b>Tags:</b>
     <% @post.tags.each do |tag| %>

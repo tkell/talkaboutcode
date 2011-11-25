@@ -84,6 +84,19 @@ body  {
 
 /*POST BOX PROPERTIES*/
 
+.code_box	{
+	background:#FFFFCC;
+	border:solid;
+    border-width:1px;
+	border-color:#FF7700;
+	display:inline;
+	font-family:"Courier New", Courier, monospace;
+	min-width:600px;
+	max-width:800px;
+	padding:5px;
+}
+
+
 .post_area	{
 	margin-top:20px;
 	margin-bottom:20px;
