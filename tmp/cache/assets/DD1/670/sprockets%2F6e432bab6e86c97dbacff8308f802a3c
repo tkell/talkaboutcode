@@ -9047,5 +9047,5 @@ window.jQuery = window.$ = jQuery;
 })(window);
 "content_type"application/javascript"
 class"BundledAsset"
-mtime"2011-10-14T11:24:21-07:00"_version"%4cb2ee12166a4b69b8fba75205972b7a"id"%fb44a7ee1eb8e8e3faaf0faea759c3f8"dependency_paths[{"hexdigest"%eee0bc5d47c5db3ce935d0ac878be1c2"
-mtimeu:	TimeТеЂ  Pa"	path"X/usr/lib/ruby/gems/1.8/gems/jquery-rails-1.0.16/vendor/assets/javascripts/jquery.js"pathname"X/usr/lib/ruby/gems/1.8/gems/jquery-rails-1.0.16/vendor/assets/javascripts/jquery.js"logical_path"jquery.js:@compressedF:@created_atf1322274454.5276511 Е	
+mtime"2011-10-14T11:24:21-07:00"_version"%613608b702f8b448c9193f9bfa879da1"id"%2cdaf668c255cf11fafcf43f02253514"dependency_paths[{"hexdigest"%a963c7db742d9a55cf4d9200bc2e96f6"
+mtimeu:	TimeТеЂ  Pa"	path"X/usr/lib/ruby/gems/1.8/gems/jquery-rails-1.0.16/vendor/assets/javascripts/jquery.js"pathname"X/usr/lib/ruby/gems/1.8/gems/jquery-rails-1.0.16/vendor/assets/javascripts/jquery.js"logical_path"jquery.js:@compressedF:@created_atf1322279707.350106 h#

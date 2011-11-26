@@ -60314,3 +60314,10 @@ Started GET "/" for 127.0.0.1 at Fri Nov 25 19:53:14 -0800 2011
 Rendered posts/_post_short.html.erb (1366.7ms)
 Rendered home/index.html.erb within layouts/application (1545.6ms)
 Completed 200 OK in 1579ms (Views: 1574.0ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/about" for 127.0.0.1 at Fri Nov 25 20:00:22 -0800 2011
+  Processing by HomeController#about as HTML
+Rendered home/about.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+Completed 200 OK in 78ms (Views: 76.1ms | ActiveRecord: 1.3ms)
