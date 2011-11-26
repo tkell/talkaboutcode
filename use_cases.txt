@@ -1,24 +1,24 @@
 How to test Talkaboutcode:  
 
-ALL PASSING LOCALLY as of 11/24/11.  
+ALL PASSING LOCALLY as of 11/25/11.  
 ALL PASSING ON HEROKU as of 11/24/11.  
 
 
-	- Sign up as a new user with :username
-	- Go to /me, see your user page
-	- Sign out.  
-	- Sign in as :username
-	- Create a new post at /posts/new, with a :tag
-	- Record audio.  Reset the audio. Record it again, and upload it, then submit the post.  
-	- View the post.  
-	- Reply to the post with recorded soundcloud audio.
-	- View the post and its reply. 
-	- Go to /, see the most current posts
-	- Search for the post by :tag (and find it!)
-	- View your user at /:username, including the post and the reply link
-	- View all posts at /posts
-	- Delete the post, from /me.
-	- View all posts, and view /me again, and make sure the post is not there
-	- Look at the About and Contact pages, make sure they're not terrible.
+- Sign up as a new user with :username
+- Go to /me, see your user page
+- Sign out.  
+- Sign in as :username
+- Create a new post at /posts/new, with a :tag
+- Record audio.  Reset the audio. Record it again, and upload it, then submit the post.  
+- View the post.  
+- Reply to the post with recorded soundcloud audio.
+- View the post and its reply. 
+- Go to /, see the most current posts
+- Search for the post by :tag (and find it!)
+- View your user at /:username, including the post and the reply link
+- View all posts at /posts
+- Delete the post, from /me.
+- View all posts, and view /me again, and make sure the post is not there
+- Look at the About and Contact pages, make sure they're not terrible.
 
 
