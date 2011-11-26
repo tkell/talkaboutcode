@@ -14,7 +14,7 @@ body  {
 }
 
 #main_hdr	{
-	background:url(img/site_hdr_bkg.jpg);
+	background:url(img/site_hdr_bkg_beta.jpg);
 	height:68px;
 	width:600px;
 	padding:0px;
@@ -43,7 +43,6 @@ body  {
 #main_bdy	{
 	background:url(img/site_bdy_bkg.jpg);
 	background-repeat:repeat-y;
-	width:1200px;
 	padding:0px;
 	border:0px;
     padding-left:150px;
@@ -52,7 +51,6 @@ body  {
 #main_ftr	{
 	background:url(img/site_ftr_bkg.jpg);
 	height:66px;
-	width:1200px;
 	padding:0px;
 	border:0px;
 	text-align:center;
@@ -92,7 +90,7 @@ body  {
 	display:inline;
 	font-family:"Courier New", Courier, monospace;
 	min-width:600px;
-	max-width:800px;
+	max-width:805px;
 	padding:5px;
 }
 
@@ -142,8 +140,8 @@ body  {
     padding:0px;
 }
 
-#reply_hdr	{
-	background:url(img/post_hdr_bkg.jpg);
+.reply_hdr	{
+	background:url(img/replies_bkg.jpg);
 	line-height:26px;
 	font-weight:bold;
 	width:920px;
@@ -229,7 +227,7 @@ h1 {
 }
 
 #sc_html_error {
-  width: 620px;
+  width: 820px;
   color: #EE4000;
   font-weight: bold;
 }

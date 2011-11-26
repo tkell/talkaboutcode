@@ -3,7 +3,11 @@
 <div class="post_area">
 <table cellspacing="0" id="replies">
 <tr>
-    <td class="post_hdr">
+    <% if @post.replies.length == 0 %>
+        <td class="reply_hdr">
+    <% else %>
+        <td class="post_hdr">
+    <% end %>
     <strong>Replies:</strong>   
     </td>
 </tr>

@@ -43,9 +43,11 @@
          	<div class="user_nav">
             	<% if signed_in? %>
                     <%= link_to "You", current_user, :class => "hdr_nav"%>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <%= link_to "Sign out", signout_path, :class => "hdr_nav"%>
                 <% else %>
                     <%= link_to "Sign in", signin_path, :class => "hdr_nav" %>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <%= link_to "Sign up", signup_path, :class => "hdr_nav" %>
                 <% end %>
             </div>

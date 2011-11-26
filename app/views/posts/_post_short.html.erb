@@ -15,7 +15,7 @@
 </tr>
 <tr>
     <td class="post_ftr">
-    Posted by <%= post.user.username %> at <span class="timestamp"><%= post.created_at %> </span>
+    Posted by <%= post.user.username %> at <span class="timestamp"><%= post.created_at %>.  <%= post.replies.length %> replies.</span>
     </td>
 </tr>
 </table>
