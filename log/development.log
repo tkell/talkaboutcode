@@ -60321,3 +60321,53 @@ Started GET "/about" for 127.0.0.1 at Fri Nov 25 20:00:22 -0800 2011
 Rendered home/about.html.erb within layouts/application (0.3ms)
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
 Completed 200 OK in 78ms (Views: 76.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Nov 28 15:45:11 -0800 2011
+  Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY posts.created_at DESC, created_at DESC LIMIT 3[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mReply Load (0.3ms)[0m  [1mSELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 12 ORDER BY replies.created_at ASC[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mReply Load (0.3ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 4 ORDER BY replies.created_at ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mReply Load (0.3ms)[0m  SELECT "replies".* FROM "replies" WHERE "replies"."post_id" = 3 ORDER BY replies.created_at ASC
+Rendered posts/_post_short.html.erb (1392.6ms)
+Rendered home/index.html.erb within layouts/application (1597.8ms)
+Compiled application.css  (20ms)  (pid 2171)
+Compiled home.css  (11ms)  (pid 2171)
+Compiled posts.css  (8ms)  (pid 2171)
+Compiled replys.css  (2ms)  (pid 2171)
+Compiled scaffolds.css  (156ms)  (pid 2171)
+Compiled sessions.css  (10ms)  (pid 2171)
+Compiled users.css  (5ms)  (pid 2171)
+Compiled application.js  (41ms)  (pid 2171)
+Compiled jquery.js  (23ms)  (pid 2171)
+Compiled jquery_ujs.js  (2ms)  (pid 2171)
+Compiled home.js  (403ms)  (pid 2171)
+Compiled posts.js  (326ms)  (pid 2171)
+Compiled replys.js  (345ms)  (pid 2171)
+Compiled sc_recorder.js  (9ms)  (pid 2171)
+Compiled sdk.js  (7ms)  (pid 2171)
+Compiled sessions.js  (510ms)  (pid 2171)
+Compiled users.js  (325ms)  (pid 2171)
+Completed 200 OK in 4345ms (Views: 4337.6ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Mon Nov 28 15:45:23 -0800 2011
+  Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+Rendered posts/_record.html.erb (0.8ms)
+Rendered posts/new.html.erb within layouts/application (118.5ms)
+Completed 200 OK in 225ms (Views: 166.0ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/posts" for 127.0.0.1 at Mon Nov 28 15:46:11 -0800 2011
+  Processing by PostsController#create as HTML
+  Parameters: {"commit"=>"Create Post", "post"=>{"title"=>"Posting Without Code", "code_snippet"=>"", "tags"=>"meta, test"}, "authenticity_token"=>"RND2+2N1SVaBCckoNeXkg+Q46q7bAsIBXz+9aw10JCg=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+WARNING: Can't mass-assign protected attributes: tags
+Rendered posts/_record.html.erb (0.2ms)
+Rendered posts/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 193ms (Views: 44.2ms | ActiveRecord: 1.4ms)

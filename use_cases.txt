@@ -1,6 +1,6 @@
 How to test Talkaboutcode:  
 
-ALL PASSING LOCALLY as of 11/25/11.  
+ALL PASSING LOCALLY as of 11/26/11.  
 ALL PASSING ON HEROKU as of 11/25/11.  
 
 
